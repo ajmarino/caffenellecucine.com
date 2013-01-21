@@ -1,0 +1,11 @@
+{
+	"name": "App",
+	"jam": {
+		"packageDir": "app/public/js/vendor",
+		"baseUrl": "app",
+		"dependencies": {
+			"jquery"   : null,
+			"jquery-ui" : null
+		}
+	}
+}

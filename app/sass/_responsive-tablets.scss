@@ -1,0 +1,46 @@
+//
+// Responsive: Tablet to Regular desktop
+// --------------------------------------------------
+
+// @media (min-width: 768px) and (max-width: 979px / 61.1875em) {
+@media (min-width: 48em) {
+
+	// // Fixed grid
+	// @include grid-core($gridColumnWidth768, $gridGutterWidth768);
+	// // Fluid grid
+	// @include grid-fluid($fluidGridColumnWidth768, $fluidGridGutterWidth768);
+	// // Input grid
+	// @include grid-input($gridColumnWidth768, $gridGutterWidth768);
+	// // No need to reset .thumbnails here since it's the same $gridGutterWidth
+
+	@include grid-setup("tablet");
+
+	/*****************************  Baseline Test Page */
+	#baseLine {
+		#basic {
+			div { }
+		}
+		#changing {
+			.main { @extend %tablet-two-thirds; }
+			.side { @extend %tablet-one-third; }
+		}
+		#jumping {
+			div { @extend %tablet-full;
+				+ div { @extend %tablet-half;
+					+ div { @extend %tablet-half; }
+				}
+			}
+		}
+		#smaller {
+			div { @extend %tablet-half; }
+		}
+		#nested {
+			.grid-col { @extend %tablet-half; }
+			.grid-wrap { 
+				.grid-col { @extend %tablet-full; }
+			}
+		}
+	}
+	/******************************/
+
+}
