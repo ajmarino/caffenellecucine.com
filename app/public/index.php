@@ -1,17 +1,8 @@
 <?php 
-	$title = "Home";
-
 	@include "templates/head.inc";
 ?>
 
-
-<div class="container">
-
-</div>
-
-
-
-		
+<section role="main" ng-view></section>
 
 <?php
 	@include "templates/footer.inc";
