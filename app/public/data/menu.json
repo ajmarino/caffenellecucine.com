@@ -1,0 +1,56 @@
+{
+	"coffee" : [
+		{
+			"section" : "From the Coffee Bar",
+			"items" : [
+				{
+					"name"      : "Drip Coffee",
+					"desc"      : "House Blend, Decaf, Dark Roast, Morning Blend, Flavor of the Day",
+					"sml_price" : 1.75,
+					"lrg_price" : 2.00
+				},{
+					"name"      : "Single Espresso",
+					"desc"      : "A single shot of espresso",
+					"sml_price" : 2.00
+				},{
+					"name"      : "Double Espresso",
+					"desc"      : "For a real kick in the pants, try a Double Espresso",
+					"sml_price" : 2.25
+				}
+			]
+		},{
+			"section" : "Espresso Drinks",
+			"items" : [
+				{
+					"name"      : "Cappuccino",
+					"desc"      : "Frothed milk with espresso",
+					"sml_price" : 3.25,
+					"lrg_price" : 3.50
+				},{
+					"name"      : "Latte",
+					"desc"      : "Steamed milk with espresso",
+					"sml_price" : 3.25,
+					"lrg_price" : 3.50
+				}
+			]
+		}
+	],
+	"breakfast" : [
+		{
+			"section" : "Breakfast",
+			"items" : [
+				{
+					"name"      : "Assorted Fresh Bagels",
+					"sml_price" : 1.00
+				},{
+					"name"      : "Bagel with Butter",
+					"sml_price" : 1.50
+				},{
+					"name"      : "Bagel with a \"Schmear\"",
+					"desc"      : "Cream Cheese",
+					"sml_price" : 2.00
+				}
+			]
+		}
+	]
+}

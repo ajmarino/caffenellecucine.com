@@ -45,131 +45,115 @@ angular.module('Caffe', [])
 
 
 var HomeCtrl = function ($scope, $http) {
-	var $t_text = $('.testimonials blockquote'),
-		$t_author = $('.testimonials p');
+	buildPage("home");
 
-		$t_text.text("Great Place! Coffee is always good. For pleasure or business I go to Caffe Cucine.");
-		$t_author.text("- Tom P");
-
-		$scope.page_title = "Home";
-
-		$('#home-carousel').carousel({
-			interval : 5000,
-			cycle    : true
-		})
-
-	// $http.get("/api/workouts")
-	// 	.success(function (data) {
-	// 		$scope.workouts  = data[0];
-	// 		$scope.exercises = data[1];
-	// 		$scope.sets      = data[2];
-
-	// 		var filtered_sets = [];
-
-	// 		for (var s = 0; s < $scope.sets.length; s++) {
-	// 			filtered_sets.push( $scope.sets[s] );
-
-	// 			for (var ex = 0; ex < $scope.exercises.length; ex++) {
-	// 				if ( $scope.exercises[ex].set == $scope.sets[s] ) {
-	// 					filtered_sets[s].push( $scope.exercises[ex].exercise );
-	// 				}
-	// 			};
-	// 		};
-
-	// 		console.log( filtered_sets );
-	// 	});
-
-	// $('#addExercise').click(function (e) {
-	// 	var num = parseInt( $(this).attr('data-num') );
-	// 	num += 1;
-	// 	$(this).attr('data-num', num);
-
-	// 	$('#newExercises').append(
-	// 		'<div class="control-group"><label class="control-label"></label><div class="controls"><input type="text" class="span4"><input type="text" class="span1"><input type="text" class="span1"></div></div>');
-	// });
-
-
-	// $('#addNewSet').click(function (e) {
-	// 	$('#newExercises').html('<div class="control-group"><label class="control-label"></label><div class="controls"><input type="text" class="span4"><input type="text" class="span1"><input type="text" class="span1"></div></div>');
-
-	// });
-	
-
-	$scope.message = "Hello";
-
-
-	$t_text.text("Great Place! Coffee is always good. For pleasure or business I go to Caffe Cucine.");
-	$t_author.text("- Tom P");
+	$('#home-carousel').carousel({
+		interval : 5000,
+		cycle    : true
+	});	
 };
 
 
 var CoffeeBarCtrl = function ($scope, $http) {
-	var $t_text = $('.testimonials blockquote'),
-		$t_author = $('.testimonials p');
+	buildPage("coffee");
 
-		$t_text.text("I saw your ad on Facebook and decided after church we would stop in and try your bagels. They were very good and made to order, they were made on site. We saw fresh bread that came out of the oven and we could not resist. The place is nice and clean and we were treated wery well. I took a menu and after we looked it over we decided we have to go for lunch, everything looks good and also clean. You can't go wrong, there is something for everyone.	We were glad to find this place and will tell our friends.");
-		$t_author.text("- Anna S");
+	$scope.section = "coffee"
+
+	$http.get('/data/menu.json')
+		.success(function (data) {
+			$scope.menu = data.coffee;
+		});
 };
 
 
 var BreakfastCtrl = function ($scope, $http) {
-	var $t_text = $('.testimonials blockquote'),
-		$t_author = $('.testimonials p');
-	
-		$t_text.text("Good, wholesome food for reasonable prices and excellent service. Plenty of accommodations.");
-		$t_author.text("- Jon W");
+	buildPage("breakfast");
+
+	$http.get('/data/menu.json')
+		.success(function (data) {
+			$scope.menu = data.breakfast;
+		});
 };
 
 
 var BakeryCtrl = function ($scope, $http) {
-	var $t_text = $('.testimonials blockquote'),
-		$t_author = $('.testimonials p');
-	
-		$t_text.text("Good, wholesome food for reasonable prices and excellent service. Plenty of accommodations.");
-		$t_author.text("- Jon W");
+	buildPage("bakery");
+
+	$http.get('/data/menu.json')
+		.success(function (data) {
+			$scope.menu = data.bakery;
+		});
 };
 
 
 var LunchCtrl = function ($scope, $http) {
-	var $t_text = $('.testimonials blockquote'),
-		$t_author = $('.testimonials p');
-	
-		$t_text.text("Good, wholesome food for reasonable prices and excellent service. Plenty of accommodations.");
-		$t_author.text("- Jon W");
+	buildPage("lunch");
+
+	$http.get('/data/menu.json')
+		.success(function (data) {
+			$scope.menu = data.lunch;
+		});
 };
 
 
 var BreadsCtrl = function ($scope, $http) {
-	var $t_text = $('.testimonials blockquote'),
-		$t_author = $('.testimonials p');
-	
-		$t_text.text("Good, wholesome food for reasonable prices and excellent service. Plenty of accommodations.");
-		$t_author.text("- Jon W");
+	buildPage("breads");
+
+	$http.get('/data/menu.json')
+		.success(function (data) {
+			$scope.menu = data.breads;
+		});
 };
 
 
 var DeliCtrl = function ($scope, $http) {
-	var $t_text = $('.testimonials blockquote'),
-		$t_author = $('.testimonials p');
-	
-		$t_text.text("Good, wholesome food for reasonable prices and excellent service. Plenty of accommodations.");
-		$t_author.text("- Jon W");
+	buildPage("deli");
+
+	$http.get('/data/menu.json')
+		.success(function (data) {
+			$scope.menu = data.deli;
+		});
 };
 
 
 var RavoliCtrl = function ($scope, $http) {
-	var $t_text = $('.testimonials blockquote'),
-		$t_author = $('.testimonials p');
-	
-		$t_text.text("Good, wholesome food for reasonable prices and excellent service. Plenty of accommodations.");
-		$t_author.text("- Jon W");
+	buildPage("ravoli");
+
+	$http.get('/data/menu.json')
+		.success(function (data) {
+			$scope.menu = data.ravoli;
+		});
 };
 
 
 var ContactCtrl = function ($scope, $http) {
+	buildPage("contact");
+};
+
+
+
+function buildPage (page) {
 	var $t_text = $('.testimonials blockquote'),
 		$t_author = $('.testimonials p');
+
+	$.get("/data/testimonials.json")
+		.success(function (data) {
+			for (var i = 0, j = data.length; i < j; i++) {
+				if ( data[i].page == page ) {
+					$t_text.text( data[i].text );
+					$t_author.text( data[i].author );
+				}
+			}
+		});
+
+	if( page != "home" && page != "contact" ) {
+
+		$.get("/templates/components/menu-sections.html")
+			.success(function (data) {
+				$('.menu-sections').html(data);
+				$('.menu-sections a').removeClass('active');
+				$('.menu-sections .' + page).addClass('active');
+			});
+	}	
 	
-		$t_text.text("Good, wholesome food for reasonable prices and excellent service. Plenty of accommodations.");
-		$t_author.text("- Jon W");
-};
+}

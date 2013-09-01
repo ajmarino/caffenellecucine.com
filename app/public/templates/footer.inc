@@ -11,7 +11,7 @@
 
 					<div class="testimonials col-sm-3 col-sm-push-6">
 						<h3>&#187; Testimonials</h3>
-						<blockquote></blockquote>
+						<blockquote>{{ t_text }}</blockquote>
 						<p></p>
 					</div>
 					
