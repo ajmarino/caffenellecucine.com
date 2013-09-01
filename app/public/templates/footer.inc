@@ -1,20 +1,20 @@
 	
 			<footer>
 				<div class="row">
-					<div class="col-sm-6 col-sm-push-6">
-						<div class="hours col-md-6">
-							<h3>&#187; Hours</h3>
-							<p>Monday - Friday: 7am - 9pm</p>
-							<p>Saturday: 8am - 9pm</p>
-							<p>Sunday: 9am - 4pm</p>
-						</div>
-
-						<div class="testimonials col-md-6">
-							<h3>&#187; Testimonials</h3>
-							<blockquote></blockquote>
-							<p></p>
-						</div>
+					
+					<div class="hours col-sm-3 col-sm-push-6">
+						<h3>&#187; Hours</h3>
+						<p>Monday - Friday: 7am - 9pm</p>
+						<p>Saturday: 8am - 9pm</p>
+						<p>Sunday: 9am - 4pm</p>
 					</div>
+
+					<div class="testimonials col-sm-3 col-sm-push-6">
+						<h3>&#187; Testimonials</h3>
+						<blockquote></blockquote>
+						<p></p>
+					</div>
+					
 
 					<div class="col-sm-6 col-sm-pull-6">
 						<h3>&#187; Our Story</h3>
