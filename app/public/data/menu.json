@@ -2,7 +2,8 @@
 	"coffee" : [
 		{
 			"section" : "From the Coffee Bar",
-			"items" : [
+			"extras"  :[],
+			"items"   : [
 				{
 					"name"      : "Drip Coffee",
 					"desc"      : "House Blend, Decaf, Dark Roast, Morning Blend, Flavor of the Day",
@@ -20,7 +21,19 @@
 			]
 		},{
 			"section" : "Espresso Drinks",
-			"items" : [
+			"extras"  :[
+				{
+					"name"  : "Extra Shot",
+					"price" : ".50"
+				},{
+					"name"  : "Soy Milk",
+					"price" : ".50"
+				},{
+					"name"  : "Flavor Shot",
+					"price" : ".25"
+				}
+			],
+			"items"   : [
 				{
 					"name"      : "Cappuccino",
 					"desc"      : "Frothed milk with espresso",
@@ -33,12 +46,24 @@
 					"lrg_price" : 3.50
 				}
 			]
+		},{
+			"section" : "Speciality Espresso Drinks",
+			"extras"  :[],
+			"items"   : [
+				{
+					"name"      : "Speciality Lattes",
+					"desc"      : "Espresso, Steamed Milk and Flavorings",
+					"sml_price" : 3.75,
+					"lrg_price" : 4.00
+				}
+			]
 		}
 	],
 	"breakfast" : [
 		{
 			"section" : "Breakfast",
-			"items" : [
+			"extras"  :[],
+			"items"   : [
 				{
 					"name"      : "Assorted Fresh Bagels",
 					"sml_price" : 1.00
@@ -49,6 +74,126 @@
 					"name"      : "Bagel with a \"Schmear\"",
 					"desc"      : "Cream Cheese",
 					"sml_price" : 2.00
+				}
+			]
+		},{
+			"section" : "Breakfast Sandwiches",
+			"extras"  :[],
+			"items"   : [
+				{
+					"name"      : "Egg & Cheese Bagel",
+					"desc"      : "w/ bacon, sausage or taylor ham $3.95",
+					"sml_price" : 3.25
+				}
+			]
+		}
+	],
+	"lunch" : [
+		{
+			"section" : "Signature Sandwiches",
+			"extras"  :[],
+			"items"   : [
+				{
+					"name"      : "Italian Hero",
+					"desc"      : "prosciutto, sopressata, provolone cheese, baby arugula, hot or sweet peppers on a french bread",
+					"sml_price" : 7.95
+				}
+			]
+		},{
+			"section" : "Classic Sandwiches",
+			"extras"  :[],
+			"items"   : [
+				{
+					"name"      : "Turkey or Ham",
+					"sml_price" : 4.95,
+					"lrg_price" : 7.95
+				}
+			]
+		},{
+			"section" : "Salads",
+			"extras"  :[],
+			"items"   : [
+				{
+					"name"      : "Greek Salad",
+					"desc"      : "romaine, tomatoes, feta cheese, red onions, kalamata olives, pepper rings, and greek dressing",
+					"sml_price" : 6.50
+				}
+			]
+		},{
+			"section" : "Wraps",
+			"extras"  :[],
+			"items"   : [
+				{
+					"name"      : "Roma Wrap",
+					"desc"      : "sliced chicken breast, mozzarella, roasted peppers, spring mix, tomato, and balsamic vinaigrette",
+					"sml_price" : 6.95
+				}
+			]
+		}
+	],
+	"bakery" : [
+		{
+			"section" : "Pastries",
+			"extras"  :[],
+			"items"   : [
+				{
+					"name"      : "Drip Coffee",
+					"desc"      : "House Blend, Decaf, Dark Roast, Morning Blend, Flavor of the Day",
+					"sml_price" : 1.75,
+					"lrg_price" : 2.00
+				}
+			]
+		},{
+			"section" : "From Desserts",
+			"extras"  :[],
+			"items"   : [
+				{
+					"name"      : "Drip Coffee",
+					"desc"      : "House Blend, Decaf, Dark Roast, Morning Blend, Flavor of the Day",
+					"sml_price" : 1.75,
+					"lrg_price" : 2.00
+				}
+			]
+		}
+	],
+	"breads" : [
+		{
+			"section" : "Breads",
+			"extras"  :[],
+			"items"   : [
+				{
+					"name"      : "Drip Coffee",
+					"desc"      : "House Blend, Decaf, Dark Roast, Morning Blend, Flavor of the Day",
+					"sml_price" : 1.75,
+					"lrg_price" : 2.00
+				}
+			]
+		}
+	],
+	"deli" : [
+		{
+			"section" : "Deli",
+			"extras"  :[],
+			"items"   : [
+				{
+					"name"      : "Drip Coffee",
+					"desc"      : "House Blend, Decaf, Dark Roast, Morning Blend, Flavor of the Day",
+					"sml_price" : 1.75,
+					"lrg_price" : 2.00
+				}
+			]
+		}
+	],
+	"ravoli" : [
+		{
+			"section" : "Ravoli",
+			"extras"  :[],
+			"items"   : [
+				{
+					"name"      : "Drip Coffee",
+					"desc"      : "House Blend, Decaf, Dark Roast, Morning Blend, Flavor of the Day",
+					"sml_price" : 1.75,
+					"lrg_price" : 2.00
 				}
 			]
 		}

@@ -147,7 +147,10 @@ function buildPage (page) {
 		});
 
 	if( page != "home" && page != "contact" ) {
-
+		$.get("/templates/components/menu-head.html")
+			.success(function (data) {
+				$('.menu-head').html(data);
+			});
 		$.get("/templates/components/menu-sections.html")
 			.success(function (data) {
 				$('.menu-sections').html(data);
