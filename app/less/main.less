@@ -8,9 +8,10 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+* { .box-sizing(border-box); }
 html, button, input, select, textarea { color: #222; }
-html, body { font-size: 62.5%;  }
-body { line-height: 1.4; }
+html { font-size: 62.5%;  }
+body { line-height: 1.4; .font-size(1.6); }
 
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
@@ -54,10 +55,10 @@ textarea { resize: vertical; }
 
 
 /* ==========================================================================
-	
+	Components / Pages
    ========================================================================== */
+@import "/components/_home-slider";
 
-* { .box-sizing(border-box); }
 
 
 /* ==========================================================================

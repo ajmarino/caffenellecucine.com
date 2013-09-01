@@ -23,7 +23,7 @@
 							<p>In a world that seems to be in hyperdrive, Caffe Nelle Cucine provides a comfortable space to take a breath and relax. Understanding that there's more to a coffeehouse than just an excellent cup of coffee or a well made cappuccino, we work to provide a comfortable and relaxing space for our customers to come and unwind after a long day.</p>
 							<p>As a family run business, we are dedicated to being connected to our local community and getting to know our customers. We look forward to serving you the best cup of coffee you have ever had.</p>
 						</div>
-						<button type="button" class="view-more" id="about_more" data-toggle="collapse" data-target="#about_toggle">View More &#187;</button>
+						<button type="button" class="view-more btn btn-default" id="about_more" data-toggle="collapse" data-target="#about_toggle">View More &#187;</button>
 					</div>
 				</div>
 				

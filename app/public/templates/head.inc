@@ -23,7 +23,7 @@
 
 	<div class="container">
 
-		<header class="masthead">
+		<header class="masthead clearfix">
 			<a href="/" class="logo">Caffe Nelle Cucine</a>
 			
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">

@@ -53,6 +53,11 @@ var HomeCtrl = function ($scope, $http) {
 
 		$scope.page_title = "Home";
 
+		$('#home-carousel').carousel({
+			interval : 5000,
+			cycle    : true
+		})
+
 	// $http.get("/api/workouts")
 	// 	.success(function (data) {
 	// 		$scope.workouts  = data[0];
