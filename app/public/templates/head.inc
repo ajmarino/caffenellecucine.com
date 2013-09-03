@@ -7,7 +7,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title><?php echo $title ?> {{ page_title }} | Caffe Nelle Cucine</title>
+	<title>{{ page_title }} | Caffe Nelle Cucine</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width">
 
@@ -31,7 +31,7 @@
 			</button>
 			
 			<ul class="nav nav-justified navbar-collapse collapse">
-				<li class="active"><a href="/">Home</a></li>
+				<li><a ng-href="/">Home</a></li>
 				<li><a ng-href="#/coffeebar">Coffee Bar</a></li>
 				<li><a ng-href="#/breakfast">Breakfast</a></li>
 				<li><a ng-href="#/bakery">Baked Goods</a></li>

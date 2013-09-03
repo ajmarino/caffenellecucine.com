@@ -44,7 +44,10 @@ angular.module('Caffe', [])
 	});
 
 
-var HomeCtrl = function ($scope, $http) {
+var HomeCtrl = function ($scope, $rootScope, $http) {
+	$rootScope.page_title = "Home";
+	$rootScope.active_page = "home";
+
 	buildPage("home");
 
 	$('#home-carousel').carousel({
@@ -54,7 +57,10 @@ var HomeCtrl = function ($scope, $http) {
 };
 
 
-var CoffeeBarCtrl = function ($scope, $http) {
+var CoffeeBarCtrl = function ($scope, $rootScope, $http) {
+	$rootScope.page_title = "Coffee Bar";
+	$rootScope.active_page = "coffeebar";
+
 	buildPage("coffee");
 
 	$scope.section = "coffee"
@@ -66,7 +72,10 @@ var CoffeeBarCtrl = function ($scope, $http) {
 };
 
 
-var BreakfastCtrl = function ($scope, $http) {
+var BreakfastCtrl = function ($scope, $rootScope, $http) {
+	$rootScope.page_title = "Breakfast";
+	$rootScope.active_page = "breakfast";
+
 	buildPage("breakfast");
 
 	$http.get('/data/menu.json')
@@ -76,7 +85,10 @@ var BreakfastCtrl = function ($scope, $http) {
 };
 
 
-var BakeryCtrl = function ($scope, $http) {
+var BakeryCtrl = function ($scope, $rootScope, $http) {
+	$rootScope.page_title = "Bakery";
+	$rootScope.active_page = "bakery";
+
 	buildPage("bakery");
 
 	$http.get('/data/menu.json')
@@ -86,7 +98,10 @@ var BakeryCtrl = function ($scope, $http) {
 };
 
 
-var LunchCtrl = function ($scope, $http) {
+var LunchCtrl = function ($scope, $rootScope, $http) {
+	$rootScope.page_title = "Lunch";
+	$rootScope.active_page = "lunch";
+
 	buildPage("lunch");
 
 	$http.get('/data/menu.json')
@@ -96,7 +111,10 @@ var LunchCtrl = function ($scope, $http) {
 };
 
 
-var BreadsCtrl = function ($scope, $http) {
+var BreadsCtrl = function ($scope, $rootScope, $http) {
+	$rootScope.page_title = "Breads";
+	$rootScope.active_page = "breads";
+
 	buildPage("breads");
 
 	$http.get('/data/menu.json')
@@ -106,7 +124,10 @@ var BreadsCtrl = function ($scope, $http) {
 };
 
 
-var DeliCtrl = function ($scope, $http) {
+var DeliCtrl = function ($scope, $rootScope, $http) {
+	$rootScope.page_title = "Deli";
+	$rootScope.active_page = "deli";
+
 	buildPage("deli");
 
 	$http.get('/data/menu.json')
@@ -116,7 +137,10 @@ var DeliCtrl = function ($scope, $http) {
 };
 
 
-var RavoliCtrl = function ($scope, $http) {
+var RavoliCtrl = function ($scope, $rootScope, $http) {
+	$rootScope.page_title = "Ravoli";
+	$rootScope.active_page = "ravoli";
+
 	buildPage("ravoli");
 
 	$http.get('/data/menu.json')
@@ -126,7 +150,10 @@ var RavoliCtrl = function ($scope, $http) {
 };
 
 
-var ContactCtrl = function ($scope, $http) {
+var ContactCtrl = function ($scope, $rootScope, $http) {
+	$rootScope.page_title = "Contact";
+	$rootScope.active_page = "contact";
+
 	buildPage("contact");
 };
 
@@ -151,11 +178,11 @@ function buildPage (page) {
 			.success(function (data) {
 				$('.menu-head').html(data);
 			});
-		$.get("/templates/components/menu-sections.html")
+		$.get("/templates/components/menu-side.html")
 			.success(function (data) {
-				$('.menu-sections').html(data);
-				$('.menu-sections a').removeClass('active');
-				$('.menu-sections .' + page).addClass('active');
+				$('.menu-side').html(data);
+				$('.menu-side a').removeClass('active');
+				$('.menu-side .' + page).addClass('active');
 			});
 	}	
 	
