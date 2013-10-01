@@ -5,14 +5,14 @@
 	
 	<div class="menu-items col-sm-9">
 		<section class="menu-sub-section" ng-repeat="section in menu">
-			<h3>{{  section.section }}</h3>
+			<h2>{{  section.section }}</h2>
 			<ul>
 				<li ng-repeat="item in section.items">
 					<h4>{{ item.name }}</h4>
 					<p ng-show="item.desc">{{ item.desc }}</p>
 					<div class="prices">
 						<span class="small">${{ item.sml_price }}</span>
-						<span class="large" ng-show="item.lrg_price">${{ item.lrg_price }}</span>
+						<span class="large" ng-show="item.lrg_price"> / ${{ item.lrg_price }}</span>
 					</div>
 				</li>
 				<li class="extras" ng-show="section.extras">
