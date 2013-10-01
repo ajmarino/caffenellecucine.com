@@ -11,7 +11,7 @@
 * { .box-sizing(border-box); }
 html, button, input, select, textarea { color: #222; }
 html { font-size: 62.5%;  }
-body { line-height: 1.4; .font-size(1.6); }
+body { line-height: 1.4; .font-size(1.6); background: url(/img/body-bg.jpg) repeat center top; font-family: Georgia, Palatino, serif; }
 
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
@@ -46,19 +46,56 @@ textarea { resize: vertical; }
 
 .chromeframe { margin: 0.2em 0; background: #ccc; color: #000; padding: 0.2em 0; }
 
-
-
-// @import "normalize";
+@import "_normalize";
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
 @import "_variables";
+
+
+.top-bar { background: url("/img/top-bar.jpg") repeat top center; height: 9px; }
+
+.container { background: url("/img/glow.jpg") top center no-repeat; padding-top: 25px; }
+
+// Header
+header { margin-bottom: 15px; position: relative; }
+.logo { display: block; .clearfix; width: 80%; max-width: 500px; margin: 0 auto 15px;
+	img { width: 100%;  }
+}
+.navbar{
+	&-toggle { position: absolute; top: -20px; right: -10px; color: @mainColor; border: none; margin: 0; .transition(@anim);
+		&:hover { background-color: rgba(red(#dedba7), green(#dedba7), blue(#dedba7), 10%); }
+	}
+	&-collapse { border-top-color: #333; 
+		@media @tablet {
+			padding-top: 24px; padding-bottom: 20px !important; background: url("/img/nav-bg.png") no-repeat center 0;
+		}
+	}
+
+	&:hover { background: none; }
+}
+
+.nav {
+	ul { .clearfix; }
+	li { display: inline-block; float: left; }
+	a {
+		&:link, &:visited { color: @mainColor; .font-size(1); text-transform: uppercase; letter-spacing: 1.5px; border-radius: 5px; }
+		&:hover { background-color: rgba(red(#dedba7), green(#dedba7), blue(#dedba7), 10%) !important; }
+		
+	}
+
+	
+
+}
+.new-item { position: absolute; top: 0; left: 0; background: url("/img/new_badge.png") no-repeat scroll left center transparent; width: 221px; padding-left: 40px; color: @mainColor; .font-size(1); text-transform: uppercase; letter-spacing: 1.5px;
+}
+
+.main-content { min-height: 500px; }
 
 
 /* ==========================================================================
 	Components / Pages
    ========================================================================== */
 @import "/components/_home-slider";
-
 
 
 /* ==========================================================================

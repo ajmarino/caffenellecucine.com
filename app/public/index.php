@@ -2,7 +2,7 @@
 	@include "templates/head.inc";
 ?>
 
-<section role="main" ng-view></section>
+<section class="main-content" role="main" ng-view></section>
 
 <?php
 	@include "templates/footer.inc";

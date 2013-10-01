@@ -2,7 +2,7 @@
 
 }());
 
-angular.module('Caffe', [])
+angular.module('Caffe', ['ui.bootstrap'])
 	.config(function($routeProvider) {
 		$routeProvider
 			.when('/', {
@@ -36,6 +36,14 @@ angular.module('Caffe', [])
 			.when('/ravoli', {
 				controller  : "RavoliCtrl",
 				templateUrl : "templates/pages/ravoli.html"
+			})
+			.when('/catering', {
+				controller  : "CateringCtrl",
+				templateUrl : "templates/pages/catering.html"
+			})
+			.when('/order-form', {
+				controller  : "OrderFormCtrl",
+				templateUrl : "templates/pages/order-form.html"
 			})
 			.when('/contact', {
 				controller  : "ContactCtrl",
@@ -90,6 +98,8 @@ var BakeryCtrl = function ($scope, $rootScope, $http) {
 	$rootScope.active_page = "bakery";
 
 	buildPage("bakery");
+
+	$scope.subhead = "We are proud to offer fresh baked breads, Italian pastries, cookies and desserts from Sal &amp; Jerry's in Brooklyn, and only the finest Boar's Head Meats &amp; Cheeses.";
 
 	$http.get('/data/menu.json')
 		.success(function (data) {
@@ -150,6 +160,97 @@ var RavoliCtrl = function ($scope, $rootScope, $http) {
 };
 
 
+var CateringtCtrl = function ($scope, $rootScope, $http) {
+	$rootScope.page_title = "Catering";
+	$rootScope.active_page = "catering";
+
+	buildPage("catering");
+};
+
+
+var OrderFormCtrl = function ($scope, $rootScope, $http, $timeout) {
+	$rootScope.page_title = "Order Online";
+	$rootScope.active_page = "order-form";
+
+	buildPage("order-form");
+	
+
+	/**
+	 * Datepicker Code
+	 */
+	$scope.today = function() {
+		$scope.dt = new Date();
+	};
+
+	$scope.today();
+
+	$scope.showWeeks = true;
+	$scope.toggleWeeks = function () {
+		$scope.showWeeks = ! $scope.showWeeks;
+	};
+
+	$scope.clear = function () {
+		$scope.dt = null;
+	};
+
+	// Disable weekend selection
+	$scope.disabled = function(date, mode) {
+		return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
+	};
+
+	$scope.toggleMin = function() {
+		$scope.minDate = ( $scope.minDate ) ? null : new Date();
+	};
+	$scope.toggleMin();
+
+	$scope.open = function() {
+		$timeout(function() {
+			$scope.opened = true;
+		});
+	};
+
+	$scope.dateOptions = {
+		'year-format': "'yy'",
+		'starting-day': 1
+	};
+
+
+	/**
+	 * Timepicker code
+	 */
+	$scope.mytime = new Date();
+
+	$scope.hstep = 1;
+	$scope.mstep = 15;
+
+	$scope.options = {
+		hstep: [1, 2, 3],
+		mstep: [1, 5, 10, 15, 25, 30]
+	};
+
+	$scope.ismeridian = true;
+	$scope.toggleMode = function() {
+		$scope.ismeridian = ! $scope.ismeridian;
+	};
+
+	$scope.update = function() {
+		var d = new Date();
+		d.setHours( 14 );
+		d.setMinutes( 0 );
+		$scope.mytime = d;
+	};
+
+	$scope.changed = function () {
+		console.log('Time changed to: ' + $scope.mytime);
+	};
+
+	$scope.clear = function() {
+		$scope.mytime = null;
+	};
+
+};
+
+
 var ContactCtrl = function ($scope, $rootScope, $http) {
 	$rootScope.page_title = "Contact";
 	$rootScope.active_page = "contact";
@@ -173,7 +274,7 @@ function buildPage (page) {
 			}
 		});
 
-	if( page != "home" && page != "contact" ) {
+	if( page != "home" && page != "contact" &&  page != "catering" &&  page != "order-form" ) {
 		$.get("/templates/components/menu-head.html")
 			.success(function (data) {
 				$('.menu-head').html(data);

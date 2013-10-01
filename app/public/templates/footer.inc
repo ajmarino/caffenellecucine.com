@@ -39,7 +39,7 @@
 
 		<script src="js/vendor/jquery-1.9.1.min.js"></script>
 		<script src="js/vendor/angular-1.0.7.min.js"></script>
-		<script src="js/vendor/angular-animate-1.2.0rc1.min.js"></script>
+		<script src="js/vendor/angular-bootstrap-0.6.0.min.js"></script>
 		<script src="js/vendor/bootstrap-3.0.0.min.js"></script>
 		<script src="js/main.js"></script>
 

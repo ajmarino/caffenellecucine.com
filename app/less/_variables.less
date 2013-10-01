@@ -2,9 +2,16 @@
 	Custom Variables
    ========================================================================== */
 
+@mainColor   : #f4e6cc;
+@accentColor : #8a8571;
+
+
 // Media Query Definintions
 @retina : ~"print,(-o-min-device-pixel-ratio: 5/4),(-webkit-min-device-pixel-ratio: 1.25),(min-resolution: 120dpi)";
-
+@phone  : ~"(min-width: 30em)"; /* 480px */
+@tablet : ~"(min-width: 48em)"; /* 768px */
+@labtop : ~"(min-width: 61.25em)"; /* 980px */
+@xlarge : ~"(min-width: 75em)"; /* 1200px */
 
 @anim: all 0.3s linear;
 
@@ -14,4 +21,12 @@
   @pxValue: (@sizeValue * 10);
   font-size: ~"@{pxValue}px"; 
   font-size: ~"@{remValue}rem";
+}
+
+// Background sizing
+.background-size(@size) {
+  -webkit-background-size: @size;
+     -moz-background-size: @size;
+       -o-background-size: @size;
+          background-size: @size;
 }

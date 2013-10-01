@@ -20,23 +20,26 @@
 	<!--[if lt IE 7]>
 		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 	<![endif]-->
-
+	<div class="top-bar"></div>
 	<div class="container">
-
+		
 		<header class="masthead clearfix">
-			<a href="/" class="logo">Caffe Nelle Cucine</a>
+			<a href="/" class="logo">
+				<img src="/img/logo2.png" alt="">
+			</a>
 			
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 				<i class="icon-reorder"></i>
 			</button>
 			
-			<ul class="nav nav-justified navbar-collapse collapse">
+			<ul class="nav navbar-collapse collapse">
 				<li><a ng-href="/">Home</a></li>
 				<li><a ng-href="#/coffeebar">Coffee Bar</a></li>
 				<li><a ng-href="#/breakfast">Breakfast</a></li>
-				<li><a ng-href="#/bakery">Baked Goods</a></li>
+				<li><a ng-href="#/bakery">Bakery</a></li>
 				<li><a ng-href="#/lunch">Lunch</a></li>
 				<li><a ng-href="#/contact">Contact</a></li>
 			</ul>
-
+			
+			<a href="#/lunch" class="new-item">Try our new lunch sandwiches</a>
 		</header>
