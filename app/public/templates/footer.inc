@@ -16,20 +16,20 @@
 					</div>
 					
 
-					<div class="col-sm-6 col-sm-pull-6">
+					<div class="about-us col-sm-6 col-sm-pull-6">
 						<h3>&#187; Our Story</h3>
 						<p>Caffe Nelle Cucine started as a small idea that grew into a full blown business. Pronounced: Cafe NEL-lay koo-Chee-nay,  the name,  literally means in Italian "Coffee In The Kitchens". In Italy, the traditional Cafe is a meeting place, a place where locals meetup, relax, gossip, or just take some time for themselves. We modeled Caffe Nelle Cucine after that experience.</p>
 						<div id="about_toggle" class="collapse">
 							<p>In a world that seems to be in hyperdrive, Caffe Nelle Cucine provides a comfortable space to take a breath and relax. Understanding that there's more to a coffeehouse than just an excellent cup of coffee or a well made cappuccino, we work to provide a comfortable and relaxing space for our customers to come and unwind after a long day.</p>
 							<p>As a family run business, we are dedicated to being connected to our local community and getting to know our customers. We look forward to serving you the best cup of coffee you have ever had.</p>
 						</div>
-						<button type="button" class="view-more btn btn-default" id="about_more" data-toggle="collapse" data-target="#about_toggle">View More &#187;</button>
+						<button type="button" class="view-more btn btn-default collapsed" id="about_more" data-toggle="collapse" data-target="#about_toggle"><span>View More</span> &#187;</button>
 					</div>
 				</div>
 				
 				<div class="row">
 					<div class="copy col-xs-12">
-						<p>Copyright &copy; Caffe Nelle Cucine 2012. All Rights Reserved.</p>
+						<p>Copyright &copy; Caffe Nelle Cucine 2014. All Rights Reserved.</p>
 					</div>
 				</div>
 			</footer>

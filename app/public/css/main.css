@@ -45,6 +45,9 @@ input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit
 button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
 textarea{overflow:auto;vertical-align:top;}
 table{border-collapse:collapse;border-spacing:0}
+h1,h2,h3,h4,h5{font-family:Georgia,Palatino,serif}
+h1{font-weight:normal;font-size:50px;font-size:5rem;color:#a2ccd0;text-decoration:none;text-align:center;margin:0 0 10px}@media (min-width: 48em){h1{text-align:left}}
+h3{color:#b3b496;font-size:10px;font-size:1rem;text-transform:uppercase;letter-spacing:1.5px;margin:10px 0 5px;font-weight:normal}@media (min-width: 48em){}
 .top-bar{background:url("/img/top-bar.jpg") repeat top center;height:9px}
 .container{background:url("/img/glow.jpg") top center no-repeat;padding-top:25px}
 header{margin-bottom:15px;position:relative}
@@ -52,15 +55,25 @@ header{margin-bottom:15px;position:relative}
 .logo:after{clear:both}
 .logo img{width:100%}
 .navbar-toggle{position:absolute;top:-20px;right:-10px;color:#f4e6cc;border:none;margin:0;-webkit-transition:all .3s linear;transition:all .3s linear}.navbar-toggle:hover{background-color:rgba(222,219,167,0.1)}
-.navbar-collapse{border-top-color:#333}@media (min-width: 48em){.navbar-collapse{padding-top:24px;padding-bottom:20px !important;background:url("/img/nav-bg.png") no-repeat center 0}}
+.navbar-collapse{border:none;-webkit-box-shadow:none;box-shadow:none;background:url("/img/nav-bg.png") no-repeat center -64px}@media (min-width: 48em){.navbar-collapse{padding-top:24px;padding-bottom:20px !important;background-position:center 0}}
 .navbar:hover{background:none}
 .nav ul:before,.nav ul:after{content:" ";display:table;}
 .nav ul:after{clear:both}
-.nav li{display:inline-block;float:left}
-.nav a:link,.nav a:visited{color:#f4e6cc;font-size:10px;font-size:1rem;text-transform:uppercase;letter-spacing:1.5px;border-radius:5px}
-.nav a:hover{background-color:rgba(222,219,167,0.1) !important}
-.new-item{position:absolute;top:0;left:0;background:url("/img/new_badge.png") no-repeat scroll left center transparent;width:221px;padding-left:40px;color:#f4e6cc;font-size:10px;font-size:1rem;text-transform:uppercase;letter-spacing:1.5px}
-.main-content{min-height:500px}
+.nav li{text-align:center}@media (min-width: 48em){.nav li{display:inline-block;float:left}}
+.nav a:link,.nav a:visited{color:#f4e6cc;font-size:10px;font-size:1rem;text-transform:uppercase;letter-spacing:1.5px;border-radius:5px}@media (min-width: 61.25em){.nav a:link,.nav a:visited{padding:10px 25px}}@media (min-width: 75em){.nav a:link,.nav a:visited{padding:10px 35px}}
+.nav a:hover{background-color:rgba(244,230,204,0.1) !important}
+.new-item{position:absolute;bottom:23px;right:0;background:url("/img/new_badge.png") no-repeat scroll left center transparent;width:180px;padding-left:40px;color:#f4e6cc;font-size:10px;font-size:1rem;text-transform:uppercase;letter-spacing:1.5px;display:none;-webkit-transition:all .3s linear;transition:all .3s linear}.new-item:hover{color:#b3b496;text-decoration:none}
+@media (min-width: 48em){.new-item{display:block}}@media (min-width: 61.25em){.new-item{width:250px;height:30px;line-height:3.1}}
+.main-content{min-height:400px}.main-content p{font-family:Arial,Helvetica,sans-serif;color:#f4e6cc;font-size:12px;font-size:1.2rem;line-height:15px;margin-bottom:10px}.main-content p.subhead{font-size:16px;font-size:1.6rem;margin:5px 0 15px 0;line-height:20px}
+footer{background:url("/img/bottom.png") repeat-x 0 0;margin:30px -15px;border-bottom:1px dotted #8a8571;padding:10px 0}@media (min-width: 48em){footer{margin:30px -15px}}footer p{font-family:Arial,Helvetica,sans-serif;color:#f4e6cc;font-size:12px;font-size:1.2rem;line-height:15px;margin-bottom:10px}
+footer .row{margin-left:0;margin-right:0}@media (min-width: 48em){footer .row{margin-left:15px;margin-right:15px}}
+footer .view-more{color:#f4e6cc;font-size:10px;font-size:1rem;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:15px;border-radius:5px;background-color:rgba(244,230,204,0.1);border:none;-webkit-transition:all .3s linear;transition:all .3s linear}footer .view-more:hover{background-color:rgba(244,230,204,0.3);color:#f4e6cc}
+footer .about-us,footer .hours,footer .testimonials,footer .copy{padding-left:15px}
+@media (min-width: 48em){footer .testimonials,footer .hours{padding-left:0}}
+footer .hours{margin-bottom:15px}
+footer .testimonials blockquote,footer .testimonials p{color:#f4e6cc;font-size:12px;line-height:15px;margin-bottom:5px}
+footer .testimonials blockquote{padding-left:15px;border-left:1px dotted #8a8571;font-size:13px}
+footer .testimonials p{font-style:italic;text-align:right}
 .carousel{padding:0}.carousel-indicators li{-webkit-transition:all .3s linear;transition:all .3s linear}
 @media (min-width: 48em){.carousel-inner{border-radius:10px}}
 .carousel .item img{width:100%}

@@ -1,0 +1,54 @@
+<h1>Order Online</h1>
+<p class="subhead">Fill out the order form below and we will contact you to confirm the order.</p>
+
+
+<form action="" class="order-form">
+	<fieldset>
+		<legend>Contact Information</legend>
+		<div class="row">
+			<div class="col-xs-12 control">
+				<label for="order_name">Name</label>
+				<input type="text" id="order_name" name="order_name">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-4 control">
+				<label for="order_phone">Phone</label>
+				<input type="tel" id="order_phone" name="order_phone">
+			</div>
+			<div class="col-xs-6 col-sm-4 control">
+				<label for="order_pickup_date">Date for Pick Up</label>
+				<input type="text" datepicker-popup="dd-MMMM-yyyy" ng-model="dt" is-open="opened" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" />
+				<button class="btn" ng-click="open()"><i class="icon-calendar"></i></button>
+			</div>
+			<div class="col-xs-6 col-sm-4 control">
+				<label for="order_pickup_time">Time for Pick Up</label>
+				<div ng-model="mytime" ng-change="changed()" class="well well-small" style="display:inline-block;">
+					<timepicker hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+				</div>
+			</div>
+		</div>
+	</fieldset>
+	
+	<h2>Check the box of the order type you are placing:</h2>
+	<div class="order-types row">
+		<div class="col-xs-6">
+			<label class="checkbox-inline" for="bakery-form">
+				<input type="checkbox" id="bakery-form" ng-model="bakery_form"> Bakery
+			</label>
+		</div>
+		<div class="col-xs-6">
+			<label class="checkbox-inline" for="catering-form">
+				<input type="checkbox" id="catering-form" ng-model="catering_form"> Catering
+			</label>
+		</div>
+	</div>
+
+	<fieldset ng-show="bakery_form">
+		<legend>Bakery</legend>
+	</fieldset>
+	
+	<fieldset ng-show="catering_form">
+		<legend>Catering</legend>
+	</fieldset>
+</form>

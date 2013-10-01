@@ -285,6 +285,14 @@ function buildPage (page) {
 				$('.menu-side a').removeClass('active');
 				$('.menu-side .' + page).addClass('active');
 			});
-	}	
+	}
+
+	$('.view-more').click(function (e) {
+		if ( $(this).hasClass('collapsed') ) {
+			$(this).find('span').text("Hide");
+		} else {
+			$(this).find('span').text("View More");
+		}
+	})
 	
 }
