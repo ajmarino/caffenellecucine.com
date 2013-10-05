@@ -3,7 +3,7 @@
 }());
 
 angular.module('Caffe', ['ui.bootstrap'])
-	.config(function($routeProvider) {
+	.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 		$routeProvider
 			.when('/', {
 				controller  : "HomeCtrl",
@@ -48,8 +48,13 @@ angular.module('Caffe', ['ui.bootstrap'])
 			.when('/contact', {
 				controller  : "ContactCtrl",
 				templateUrl : "templates/pages/contact.html"
+			})
+			.otherwise({
+				templateUrl: "templates/404.html"
 			});
-	});
+
+
+	}]);
 
 
 var HomeCtrl = function ($scope, $rootScope, $http) {
@@ -65,9 +70,11 @@ var HomeCtrl = function ($scope, $rootScope, $http) {
 };
 
 
-var CoffeeBarCtrl = function ($scope, $rootScope, $http) {
+var CoffeeBarCtrl = function ($scope, $rootScope, $http, $window) {
 	$rootScope.page_title = "Coffee Bar";
 	$rootScope.active_page = "coffeebar";
+
+
 
 	buildPage("coffee");
 

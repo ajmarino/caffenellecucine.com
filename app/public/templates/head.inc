@@ -11,6 +11,8 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width">
 
+	<meta name="fragment" content="!" />
+
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/font-awesome.css">
 	<link rel="stylesheet" href="css/main.css">
@@ -21,6 +23,7 @@
 		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 	<![endif]-->
 	<div class="top-bar"></div>
+
 	<div class="container">
 		
 		<header class="masthead clearfix">
@@ -41,5 +44,5 @@
 				<li><a ng-href="#/contact">Contact</a></li>
 			</ul>
 			
-			<a href="#/lunch" class="new-item">Try our new lunch sandwiches</a>
+			<a href="/lunch" class="new-item">Try our new lunch sandwiches</a>
 		</header>
