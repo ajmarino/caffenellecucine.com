@@ -44,5 +44,4 @@
 				<li><a ng-href="#/contact">Contact</a></li>
 			</ul>
 			
-			<a href="/lunch" class="new-item">Try our new lunch sandwiches</a>
 		</header>

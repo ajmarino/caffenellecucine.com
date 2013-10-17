@@ -72,7 +72,8 @@ header { margin-bottom: 15px; position: relative; }
 }
 .navbar{
 	&-toggle { position: absolute; top: -20px; right: -10px; color: @mainColor; border: none; margin: 0; .transition(@anim);
-		&:hover { background-color: rgba(red(#dedba7), green(#dedba7), blue(#dedba7), 10%); }
+		&:hover, &:focus { background-color: rgba(red(#dedba7), green(#dedba7), blue(#dedba7), 10%); }
+		&:focus { outline: none; .box-shadow(0 0 4px rgba(red(#dedba7), green(#dedba7), blue(#dedba7), 10%)) }
 	}
 	&-collapse { border: none; .box-shadow(none); background: url("/img/nav-bg.png") no-repeat center -64px;
 		@media @tablet {
@@ -151,8 +152,8 @@ footer { background: url("/img/bottom.png") repeat-x 0 0; margin: 30px -15px; bo
 }
 
 .menu {
-	&-side { border-top: @dottedBd; position: relative; z-index: 5; padding: 0;
-		nav { margin-bottom: 25px;
+	&-side { position: relative; z-index: 5; 
+		nav { margin-bottom: 25px; border-top: @dottedBd;
 			a { color: @mainColor; .font-size(1.6); display: block; padding: 5px; text-decoration: none; border-bottom: @dottedBd; .transition(@anim);
 				&:hover { color: @tertairyColor; }
 

@@ -74,7 +74,7 @@ var CoffeeBarCtrl = function ($scope, $rootScope, $http, $window) {
 	$rootScope.page_title = "Coffee Bar";
 	$rootScope.active_page = "coffeebar";
 
-
+	$scope.subhead = "Testing"
 
 	buildPage("coffee");
 
@@ -91,6 +91,8 @@ var BreakfastCtrl = function ($scope, $rootScope, $http) {
 	$rootScope.page_title = "Breakfast";
 	$rootScope.active_page = "breakfast";
 
+	$scope.subhead = "Testing"
+
 	buildPage("breakfast");
 
 	$http.get('/data/menu.json')
@@ -103,10 +105,9 @@ var BreakfastCtrl = function ($scope, $rootScope, $http) {
 var BakeryCtrl = function ($scope, $rootScope, $http) {
 	$rootScope.page_title = "Bakery";
 	$rootScope.active_page = "bakery";
+	
 
 	buildPage("bakery");
-
-	$scope.subhead = "We are proud to offer fresh baked breads, Italian pastries, cookies and desserts from Sal &amp; Jerry's in Brooklyn, and only the finest Boar's Head Meats &amp; Cheeses.";
 
 	$http.get('/data/menu.json')
 		.success(function (data) {
@@ -118,6 +119,8 @@ var BakeryCtrl = function ($scope, $rootScope, $http) {
 var LunchCtrl = function ($scope, $rootScope, $http) {
 	$rootScope.page_title = "Lunch";
 	$rootScope.active_page = "lunch";
+
+	$scope.subhead = "Testing"
 
 	buildPage("lunch");
 
@@ -132,6 +135,8 @@ var BreadsCtrl = function ($scope, $rootScope, $http) {
 	$rootScope.page_title = "Breads";
 	$rootScope.active_page = "breads";
 
+	$scope.subhead = "Testing"
+
 	buildPage("breads");
 
 	$http.get('/data/menu.json')
@@ -144,6 +149,8 @@ var BreadsCtrl = function ($scope, $rootScope, $http) {
 var DeliCtrl = function ($scope, $rootScope, $http) {
 	$rootScope.page_title = "Deli";
 	$rootScope.active_page = "deli";
+
+	$scope.subhead = "Testing"
 
 	buildPage("deli");
 
@@ -158,6 +165,8 @@ var RavoliCtrl = function ($scope, $rootScope, $http) {
 	$rootScope.page_title = "Ravoli";
 	$rootScope.active_page = "ravoli";
 
+	$scope.subhead = "Testing"
+
 	buildPage("ravoli");
 
 	$http.get('/data/menu.json')
@@ -171,6 +180,8 @@ var CateringtCtrl = function ($scope, $rootScope, $http) {
 	$rootScope.page_title = "Catering";
 	$rootScope.active_page = "catering";
 
+	$scope.subhead = "Testing"
+
 	buildPage("catering");
 };
 
@@ -179,8 +190,9 @@ var OrderFormCtrl = function ($scope, $rootScope, $http, $timeout) {
 	$rootScope.page_title = "Order Online";
 	$rootScope.active_page = "order-form";
 
+	$scope.subhead = "Testing"
+
 	buildPage("order-form");
-	
 
 	/**
 	 * Datepicker Code
@@ -266,15 +278,17 @@ var ContactCtrl = function ($scope, $rootScope, $http) {
 };
 
 
-
 function buildPage (page) {
-	var $t_text = $('.testimonials blockquote'),
-		$t_author = $('.testimonials p');
+	var $t_text   = $('.testimonials blockquote'),
+		$t_author = $('.testimonials p'),
+		$subhead  = $('.menu-text p');
 
-	$.get("/data/testimonials.json")
+	$.get("/data/data.json")
 		.success(function (data) {
 			for (var i = 0, j = data.length; i < j; i++) {
 				if ( data[i].page == page ) {
+					$subhead.text( data[i].subhead );
+
 					$t_text.text( data[i].text );
 					$t_author.text( data[i].author );
 				}
