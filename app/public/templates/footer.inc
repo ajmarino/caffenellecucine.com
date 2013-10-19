@@ -7,6 +7,16 @@
 						<p>Monday - Friday: 7am - 9pm</p>
 						<p>Saturday: 8am - 9pm</p>
 						<p>Sunday: 9am - 4pm</p>
+
+						<!-- Begin MailChimp Signup Form -->
+							<div id="mc_embed_signup">
+								<form action="http://caffenellecucine.us6.list-manage.com/subscribe/post?u=20311fe0d4de3455f8d70922d&amp;id=20c947202a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+									<label for="mce-EMAIL">» Subscribe to our mailing list</label>
+									<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+									<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn">
+								</form>
+							</div>
+						<!--End mc_embed_signup-->
 					</div>
 
 					<div class="testimonials col-sm-3 col-sm-push-6">

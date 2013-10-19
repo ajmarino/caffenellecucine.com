@@ -72,8 +72,8 @@ header { margin-bottom: 15px; position: relative; }
 }
 .navbar{
 	&-toggle { position: absolute; top: -20px; right: -10px; color: @mainColor; border: none; margin: 0; .transition(@anim);
-		&:hover, &:focus { background-color: rgba(red(#dedba7), green(#dedba7), blue(#dedba7), 10%); }
-		&:focus { outline: none; .box-shadow(0 0 4px rgba(red(#dedba7), green(#dedba7), blue(#dedba7), 10%)) }
+		&:hover, &:focus { background-color: rgba(red(@btnColor), green(@btnColor), blue(@btnColor), 10%); }
+		&:focus { outline: none; .box-shadow(0 0 4px rgba(red(@btnColor), green(@btnColor), blue(@btnColor), 10%)) }
 	}
 	&-collapse { border: none; .box-shadow(none); background: url("/img/nav-bg.png") no-repeat center -64px;
 		@media @tablet {
@@ -136,10 +136,12 @@ footer { background: url("/img/bottom.png") repeat-x 0 0; margin: 30px -15px; bo
 		&:hover { background-color: rgba(red(@mainColor), green(@mainColor), blue(@mainColor), 30%); color: @mainColor; }
 	}
 
-	.about-us, .hours, .testimonials, .copy { padding-left: 15px; }
+	.about-us, .hours, .testimonials, .copy { padding-left: 15px;
+		@media @tablet { padding-left: 0; }
+	}
 
 	.testimonials, .hours {
-		@media @tablet { padding-left: 0; }
+		@media @tablet { padding-right: 0; }
 	}
 	
 	.hours { margin-bottom: 15px; }
@@ -181,7 +183,7 @@ footer { background: url("/img/bottom.png") repeat-x 0 0; margin: 30px -15px; bo
 	Components / Pages
    ========================================================================== */
 @import "/components/_home-slider";
-
+@import "/components/_mailchimp_signup";
 
 /* ==========================================================================
    Helper classes
