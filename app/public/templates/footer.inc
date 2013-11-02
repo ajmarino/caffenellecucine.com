@@ -10,10 +10,13 @@
 
 						<!-- Begin MailChimp Signup Form -->
 							<div id="mc_embed_signup">
-								<form action="http://caffenellecucine.us6.list-manage.com/subscribe/post?u=20311fe0d4de3455f8d70922d&amp;id=20c947202a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-									<label for="mce-EMAIL">» Subscribe to our mailing list</label>
-									<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-									<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn">
+								<form action="http://caffenellecucine.us6.list-manage.com/subscribe/post?u=20311fe0d4de3455f8d70922d&amp;id=20c947202a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate role="form">
+									<div class="form-group">
+										<label for="mce-EMAIL">» Subscribe to our mailing list</label>
+										<input type="email" value="" name="EMAIL" class="form-control" id="mce-EMAIL" placeholder="email address" required>
+									</div>
+									
+									<button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn form-btn">Subscribe</button>
 								</form>
 							</div>
 						<!--End mc_embed_signup-->
@@ -46,6 +49,8 @@
 		
 
 		</div>
+
+		<script src='//api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.js'></script>
 
 		<script src="js/vendor/jquery-1.9.1.min.js"></script>
 		<script src="js/vendor/angular-1.0.7.min.js"></script>

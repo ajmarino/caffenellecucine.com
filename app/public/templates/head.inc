@@ -13,6 +13,11 @@
 
 	<meta name="fragment" content="!" />
 
+	<link href='//api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.css' rel='stylesheet' />
+	<!--[if lte IE 8]>
+		<link href='//api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.ie.css' rel='stylesheet' />
+	<![endif]-->
+	
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/font-awesome.css">
 	<link rel="stylesheet" href="css/main.css">
@@ -41,6 +46,7 @@
 				<li><a ng-href="#/breakfast">Breakfast</a></li>
 				<li><a ng-href="#/bakery">Bakery</a></li>
 				<li><a ng-href="#/lunch">Lunch</a></li>
+				<li><a ng-href="#/catering">Catering</a></li>
 				<li><a ng-href="#/contact">Contact</a></li>
 			</ul>
 			

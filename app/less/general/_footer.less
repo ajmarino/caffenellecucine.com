@@ -1,0 +1,26 @@
+/**
+ * Main Footer
+ */
+footer { background: url("/img/bottom.png") repeat-x 0 0; margin: 30px -15px; border-bottom: @dottedBd; padding: 10px 0;
+	@media @tablet { margin: 30px -15px; }
+
+	p { font-family: @sansFont; color: @mainColor; .font-size(1.2); line-height: 15px; margin-bottom: 10px; }
+	
+	.row { margin-left: 0; margin-right: 0; }
+
+	.view-more { color: @mainColor; .font-size(1); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 15px; border-radius: 5px; background-color: rgba(red(@mainColor), green(@mainColor), blue(@mainColor), 10%); border: none; .transition(@anim);
+		&:hover { background-color: rgba(red(@mainColor), green(@mainColor), blue(@mainColor), 30%); color: @mainColor; }
+	}
+
+	.about-us, .hours, .testimonials, .copy { padding-left: 15px; }
+
+	.testimonials, .hours { }
+	
+	.hours { margin-bottom: 15px; }
+
+	.testimonials {
+		blockquote, p { color: #f4e6cc; font-size: 12px; line-height: 15px; margin-bottom: 5px;  }
+		blockquote { padding-left: 15px; border-left: 1px dotted #8A8571; font-size: 13px; }
+		p { font-style: italic; text-align: right; }
+	}
+}

@@ -275,6 +275,9 @@ var ContactCtrl = function ($scope, $rootScope, $http) {
 	$rootScope.active_page = "contact";
 
 	buildPage("contact");
+
+	var map = L.mapbox.map('map', 'ajmarino.map-vqtcpafg');
+	map.scrollWheelZoom.disable();
 };
 
 
