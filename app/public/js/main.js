@@ -49,6 +49,14 @@ angular.module('Caffe', ['ui.bootstrap', 'ngRoute', 'ngAnimate'])
 				controller  : "ContactCtrl",
 				templateUrl : "templates/pages/contact.html"
 			})
+			.when('/contact-thanks', {
+				controller  : "ContactCtrl",
+				templateUrl : "templates/pages/contact.html"
+			})
+			.when('/contact-error', {
+				controller  : "ContactCtrl",
+				templateUrl : "templates/pages/contact.html"
+			})
 			.otherwise({
 				templateUrl: "templates/404.html"
 			});
@@ -279,6 +287,25 @@ ContactCtrl = function ($scope, $rootScope, $http) {
 
 	var map = L.mapbox.map('map', 'ajmarino.map-vqtcpafg');
 	map.scrollWheelZoom.disable();
+
+
+
+	$('#contact_form').submit(function (e) {
+		if ($('#contact_email').val() && $('#contact_message').val()) {
+			$('.flash-notice').text('').removeClass('error');
+			return;
+		}
+
+		if ( $('#contact_name').val() === "" ) {
+			show_flash_notice('Please enter a name.');
+		} else if ( $('#contact_email').val() === "" ) {
+			show_flash_notice('Please enter an email address.');
+		} else if ( $('#contact_message').val() === "" ) {
+			show_flash_notice('Please enter a message.');
+		}
+
+		e.preventDefault();
+	});
 };
 
 
@@ -320,4 +347,12 @@ function buildPage (page) {
 		}
 	})
 	
+}
+
+function show_flash_notice (text) {
+	$('.flash-notice')
+		.addClass('error')
+		.html('<i class="icon-remove"></i>' + text)
+		.fadeIn()
+		.fadeOut(3000);
 }
