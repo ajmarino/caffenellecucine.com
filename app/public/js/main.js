@@ -2,7 +2,7 @@
 
 }());
 
-angular.module('Caffe', ['ui.bootstrap'])
+angular.module('Caffe', ['ui.bootstrap', 'ngRoute', 'ngAnimate'])
 	.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 		$routeProvider
 			.when('/', {
@@ -57,7 +57,7 @@ angular.module('Caffe', ['ui.bootstrap'])
 	}]);
 
 
-var HomeCtrl = function ($scope, $rootScope, $http) {
+HomeCtrl = function ($scope, $rootScope, $http) {
 	$rootScope.page_title = "Home";
 	$rootScope.active_page = "home";
 
@@ -70,24 +70,25 @@ var HomeCtrl = function ($scope, $rootScope, $http) {
 };
 
 
-var CoffeeBarCtrl = function ($scope, $rootScope, $http, $window) {
+CoffeeBarCtrl = function ($scope, $rootScope, $http, $window) {
 	$rootScope.page_title = "Coffee Bar";
 	$rootScope.active_page = "coffeebar";
 
 	$scope.subhead = "Testing"
 
-	buildPage("coffee");
+	// buildPage("coffee");
 
 	$scope.section = "coffee"
 
 	$http.get('/data/menu.json')
 		.success(function (data) {
 			$scope.menu = data.coffee;
+			$scope.categories = data;
 		});
 };
 
 
-var BreakfastCtrl = function ($scope, $rootScope, $http) {
+BreakfastCtrl = function ($scope, $rootScope, $http) {
 	$rootScope.page_title = "Breakfast";
 	$rootScope.active_page = "breakfast";
 
@@ -102,7 +103,7 @@ var BreakfastCtrl = function ($scope, $rootScope, $http) {
 };
 
 
-var BakeryCtrl = function ($scope, $rootScope, $http) {
+BakeryCtrl = function ($scope, $rootScope, $http) {
 	$rootScope.page_title = "Bakery";
 	$rootScope.active_page = "bakery";
 	
@@ -116,7 +117,7 @@ var BakeryCtrl = function ($scope, $rootScope, $http) {
 };
 
 
-var LunchCtrl = function ($scope, $rootScope, $http) {
+LunchCtrl = function ($scope, $rootScope, $http) {
 	$rootScope.page_title = "Lunch";
 	$rootScope.active_page = "lunch";
 
@@ -131,7 +132,7 @@ var LunchCtrl = function ($scope, $rootScope, $http) {
 };
 
 
-var BreadsCtrl = function ($scope, $rootScope, $http) {
+BreadsCtrl = function ($scope, $rootScope, $http) {
 	$rootScope.page_title = "Breads";
 	$rootScope.active_page = "breads";
 
@@ -146,7 +147,7 @@ var BreadsCtrl = function ($scope, $rootScope, $http) {
 };
 
 
-var DeliCtrl = function ($scope, $rootScope, $http) {
+DeliCtrl = function ($scope, $rootScope, $http) {
 	$rootScope.page_title = "Deli";
 	$rootScope.active_page = "deli";
 
@@ -161,7 +162,7 @@ var DeliCtrl = function ($scope, $rootScope, $http) {
 };
 
 
-var RavoliCtrl = function ($scope, $rootScope, $http) {
+RavoliCtrl = function ($scope, $rootScope, $http) {
 	$rootScope.page_title = "Ravoli";
 	$rootScope.active_page = "ravoli";
 
@@ -176,7 +177,7 @@ var RavoliCtrl = function ($scope, $rootScope, $http) {
 };
 
 
-var CateringtCtrl = function ($scope, $rootScope, $http) {
+CateringtCtrl = function ($scope, $rootScope, $http) {
 	$rootScope.page_title = "Catering";
 	$rootScope.active_page = "catering";
 
@@ -186,7 +187,7 @@ var CateringtCtrl = function ($scope, $rootScope, $http) {
 };
 
 
-var OrderFormCtrl = function ($scope, $rootScope, $http, $timeout) {
+OrderFormCtrl = function ($scope, $rootScope, $http, $timeout) {
 	$rootScope.page_title = "Order Online";
 	$rootScope.active_page = "order-form";
 
@@ -270,7 +271,7 @@ var OrderFormCtrl = function ($scope, $rootScope, $http, $timeout) {
 };
 
 
-var ContactCtrl = function ($scope, $rootScope, $http) {
+ContactCtrl = function ($scope, $rootScope, $http) {
 	$rootScope.page_title = "Contact";
 	$rootScope.active_page = "contact";
 
@@ -298,18 +299,18 @@ function buildPage (page) {
 			}
 		});
 
-	if( page != "home" && page != "contact" &&  page != "catering" &&  page != "order-form" ) {
-		$.get("/templates/components/menu-head.html")
-			.success(function (data) {
-				$('.menu-head').html(data);
-			});
-		$.get("/templates/components/menu-side.html")
-			.success(function (data) {
-				$('.menu-side').html(data);
-				$('.menu-side a').removeClass('active');
-				$('.menu-side .' + page).addClass('active');
-			});
-	}
+	// if( page != "home" && page != "contact" &&  page != "catering" &&  page != "order-form" ) {
+	// 	$.get("/templates/components/menu-head.html")
+	// 		.success(function (data) {
+	// 			$('.menu-head').html(data);
+	// 		});
+	// 	$.get("/templates/components/menu-side.html")
+	// 		.success(function (data) {
+	// 			$('.menu-side').html(data);
+	// 			$('.menu-side a').removeClass('active');
+	// 			$('.menu-side .' + page).addClass('active');
+	// 		});
+	// }
 
 	$('.view-more').click(function (e) {
 		if ( $(this).hasClass('collapsed') ) {

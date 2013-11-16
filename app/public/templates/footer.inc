@@ -53,7 +53,9 @@
 		<script src='//api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.js'></script>
 
 		<script src="js/vendor/jquery-1.9.1.min.js"></script>
-		<script src="js/vendor/angular-1.0.7.min.js"></script>
+		<script src="js/vendor/angular1.2.1.min.js"></script>
+		<script src="js/vendor/angular-route1.2.1.min.js"></script>
+		<script src="js/vendor/angular-animate1.2.1.min.js"></script>
 		<script src="js/vendor/angular-bootstrap-0.6.0.min.js"></script>
 		<script src="js/vendor/bootstrap-3.0.0.min.js"></script>
 		<script src="js/main.js"></script>
