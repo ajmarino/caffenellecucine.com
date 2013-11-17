@@ -82,7 +82,6 @@ CoffeeBarCtrl = function ($scope, $rootScope, $http, $window) {
 	$rootScope.page_title = "Coffee Bar";
 	$rootScope.active_page = "coffeebar";
 
-	$scope.subhead = "Testing"
 
 	// buildPage("coffee");
 
@@ -100,13 +99,13 @@ BreakfastCtrl = function ($scope, $rootScope, $http) {
 	$rootScope.page_title = "Breakfast";
 	$rootScope.active_page = "breakfast";
 
-	$scope.subhead = "Testing"
 
 	buildPage("breakfast");
 
 	$http.get('/data/menu.json')
 		.success(function (data) {
 			$scope.menu = data.breakfast;
+			$scope.categories = data;
 		});
 };
 
@@ -121,6 +120,7 @@ BakeryCtrl = function ($scope, $rootScope, $http) {
 	$http.get('/data/menu.json')
 		.success(function (data) {
 			$scope.menu = data.bakery;
+			$scope.categories = data;
 		});
 };
 
@@ -129,13 +129,13 @@ LunchCtrl = function ($scope, $rootScope, $http) {
 	$rootScope.page_title = "Lunch";
 	$rootScope.active_page = "lunch";
 
-	$scope.subhead = "Testing"
 
 	buildPage("lunch");
 
 	$http.get('/data/menu.json')
 		.success(function (data) {
 			$scope.menu = data.lunch;
+			$scope.categories = data;
 		});
 };
 
@@ -144,13 +144,13 @@ BreadsCtrl = function ($scope, $rootScope, $http) {
 	$rootScope.page_title = "Breads";
 	$rootScope.active_page = "breads";
 
-	$scope.subhead = "Testing"
 
 	buildPage("breads");
 
 	$http.get('/data/menu.json')
 		.success(function (data) {
 			$scope.menu = data.breads;
+			$scope.categories = data;
 		});
 };
 
@@ -159,13 +159,13 @@ DeliCtrl = function ($scope, $rootScope, $http) {
 	$rootScope.page_title = "Deli";
 	$rootScope.active_page = "deli";
 
-	$scope.subhead = "Testing"
 
 	buildPage("deli");
 
 	$http.get('/data/menu.json')
 		.success(function (data) {
 			$scope.menu = data.deli;
+			$scope.categories = data;
 		});
 };
 
@@ -174,22 +174,21 @@ RavoliCtrl = function ($scope, $rootScope, $http) {
 	$rootScope.page_title = "Ravoli";
 	$rootScope.active_page = "ravoli";
 
-	$scope.subhead = "Testing"
 
 	buildPage("ravoli");
 
 	$http.get('/data/menu.json')
 		.success(function (data) {
 			$scope.menu = data.ravoli;
+			$scope.categories = data;
 		});
 };
 
 
-CateringtCtrl = function ($scope, $rootScope, $http) {
+CateringCtrl = function ($scope, $rootScope, $http) {
 	$rootScope.page_title = "Catering";
 	$rootScope.active_page = "catering";
 
-	$scope.subhead = "Testing"
 
 	buildPage("catering");
 };
@@ -199,7 +198,6 @@ OrderFormCtrl = function ($scope, $rootScope, $http, $timeout) {
 	$rootScope.page_title = "Order Online";
 	$rootScope.active_page = "order-form";
 
-	$scope.subhead = "Testing"
 
 	buildPage("order-form");
 
@@ -283,7 +281,6 @@ ContactCtrl = function ($scope, $rootScope, $http) {
 	$rootScope.page_title = "Contact";
 	$rootScope.active_page = "contact";
 
-	buildPage("contact");
 
 	var map = L.mapbox.map('map', 'ajmarino.map-vqtcpafg');
 	map.scrollWheelZoom.disable();
@@ -318,7 +315,7 @@ function buildPage (page) {
 		.success(function (data) {
 			for (var i = 0, j = data.length; i < j; i++) {
 				if ( data[i].page == page ) {
-					$subhead.text( data[i].subhead );
+					// $subhead.text( data[i].subhead );
 
 					$t_text.text( data[i].text );
 					$t_author.text( data[i].author );
