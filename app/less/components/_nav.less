@@ -1,0 +1,13 @@
+.nav { .clearfix; padding-left: 0; padding-right: 0;
+	li { text-align: center;
+		@media @tablet {
+			// display: inline-block; float: left;
+		}
+	}
+
+	a {
+		&:link, &:visited { color: @mainColor; .font-size(1); text-transform: uppercase; letter-spacing: 1.5px; border-radius: 5px; .transition(@anim); padding-left: 0; padding-right: 0; }
+		&:hover { background-color: rgba(red(@mainColor), green(@mainColor), blue(@mainColor), 10%) !important; }
+		
+	}
+}

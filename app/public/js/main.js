@@ -9,7 +9,7 @@ angular.module('Caffe', ['ui.bootstrap', 'ngRoute', 'ngAnimate'])
 				controller  : "HomeCtrl",
 				templateUrl : "templates/pages/home.html"
 			})
-			.when('/coffeebar', {
+			.when('/coffee', {
 				controller  : "CoffeeBarCtrl",
 				templateUrl : "templates/pages/coffee-bar.html"
 			})
@@ -83,7 +83,7 @@ CoffeeBarCtrl = function ($scope, $rootScope, $http, $window) {
 	$rootScope.active_page = "coffeebar";
 
 
-	// buildPage("coffee");
+	buildPage("coffee");
 
 	$scope.section = "coffee"
 
@@ -322,19 +322,20 @@ function buildPage (page) {
 				}
 			}
 		});
-
-	// if( page != "home" && page != "contact" &&  page != "catering" &&  page != "order-form" ) {
+	console.log(page);
+	
+	if( page != "home" && page != "contact" &&  page != "catering" &&  page != "order-form" ) {
 	// 	$.get("/templates/components/menu-head.html")
 	// 		.success(function (data) {
 	// 			$('.menu-head').html(data);
 	// 		});
-	// 	$.get("/templates/components/menu-side.html")
-	// 		.success(function (data) {
-	// 			$('.menu-side').html(data);
-	// 			$('.menu-side a').removeClass('active');
-	// 			$('.menu-side .' + page).addClass('active');
-	// 		});
-	// }
+		$.get("/templates/components/menu-side.html")
+			.success(function (data) {
+				$('.menu-side').html(data);
+				$('.menu-side a').removeClass('active');
+				$('.menu-side .' + page).addClass('active');
+			});
+	}
 
 	$('.view-more').click(function (e) {
 		if ( $(this).hasClass('collapsed') ) {

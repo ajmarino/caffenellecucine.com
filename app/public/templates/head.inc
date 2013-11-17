@@ -40,9 +40,9 @@
 				<i class="icon-reorder"></i>
 			</button>
 			
-			<ul class="nav navbar-collapse collapse">
+			<ul class="nav nav-justified navbar-collapse collapse">
 				<li><a ng-href="/">Home</a></li>
-				<li><a ng-href="#/coffeebar">Coffee Bar</a></li>
+				<li><a ng-href="#/coffee">Coffee Bar</a></li>
 				<li><a ng-href="#/breakfast">Breakfast</a></li>
 				<li><a ng-href="#/bakery">Bakery</a></li>
 				<li><a ng-href="#/lunch">Lunch</a></li>

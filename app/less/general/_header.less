@@ -19,30 +19,6 @@ header { margin-bottom: 15px; position: relative; }
 	&:hover { background: none; }
 }
 
-.nav {
-	ul { .clearfix; }
-	li { text-align: center;
-		@media @tablet {
-			display: inline-block; float: left;
-		}
-	}
-
-	a {
-		&:link, &:visited { color: @mainColor; .font-size(1); text-transform: uppercase; letter-spacing: 1.5px; border-radius: 5px; .transition(@anim);
-			@media @labtop {
-				padding: 10px 25px;
-			}
-			@media @xlarge {
-				padding: 10px 35px;
-			}
-		}
-		&:hover { background-color: rgba(red(@mainColor), green(@mainColor), blue(@mainColor), 10%) !important; }
-		
-	}
-
-	
-
-}
 .new-item { position: absolute; bottom: 23px; right: 0; background: url("/img/new_badge.png") no-repeat scroll left center transparent; width:180px; padding-left: 40px; color: @mainColor; .font-size(1); text-transform: uppercase; letter-spacing: 1.5px; display: none; .transition(@anim);
 
 	&:hover { color: @tertairyColor; text-decoration: none; }
