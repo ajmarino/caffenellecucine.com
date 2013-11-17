@@ -2,14 +2,24 @@
  * Menu Section
  */
 .menu {
+	&-side, &-text {
+		p {
+			a { color: @tertairyColor;
+				&:hover { color: @tertairyColor; text-decoration: none; border-bottom: 1px solid @tertairyColor; }
+			}
+		}
+	}
+	
 	&-side { position: relative; z-index: 5; 
+
 		nav { margin-bottom: 25px; border-top: @dottedBd;
 			a { color: @mainColor; .font-size(1.6); display: block; padding: 5px; text-decoration: none; border-bottom: @dottedBd; .transition(@anim);
 				&:hover { color: @tertairyColor; }
 
-				&.active { color: @tertairyColor; }
+				
 			}
 		}
+		
 	}
 	
 	&-sub-section { margin-bottom: 30px;
