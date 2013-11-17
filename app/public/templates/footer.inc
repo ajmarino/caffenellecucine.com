@@ -4,8 +4,8 @@
 					
 					<div class="hours col-sm-3 col-sm-push-6">
 						<h3>&#187; Hours</h3>
-						<p>Monday - Friday: 7am - 9pm</p>
-						<p>Saturday: 8am - 9pm</p>
+						<p>Monday - Friday: 7am - 8pm</p>
+						<p>Saturday: 8am - 8pm</p>
 						<p>Sunday: 9am - 4pm</p>
 
 						<!-- Begin MailChimp Signup Form -->
