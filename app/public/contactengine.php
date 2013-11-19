@@ -1,7 +1,7 @@
 <?php
 
 $EmailFrom = "contact@caffenellecucine.com";
-$EmailTo = "test@ajmarino.com";
+$EmailTo = "philjr@caffenellecucine.com";
 $Subject = "Website Contact";
 $Name = Trim(stripslashes($_POST['contact_name'])); 
 $Email = Trim(stripslashes($_POST['contact_email'])); 
