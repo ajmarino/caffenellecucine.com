@@ -1,0 +1,150 @@
+
+
+
+/* --------------------------------------------------------------- *
+ * A REM-PX Sass mixin
+ * --------------------------------------------------------------- *
+ * CodePen: http://codepen.io/HugoGiraudel/pen/xsKdH
+ * Article: http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+ * 
+ * $property : the property you want to apply a value to
+ * $values   : the values you want to apply to $property
+ * ---------------------------------------------------------------
+ * .el {
+ * 	   @include rem(font-size, 1.5rem);
+ * 	   @include rem(padding, 20px 10px);
+ * }
+ * ---------------------------------------------------------------
+ * 1. Removing the unit
+ */
+@mixin rem($property, $values) {
+  $px : ();
+  $rem: ();
+  
+  @each $value in $values {
+   
+    @if $value == 0 or $value == auto {
+      $px : append($px , $value);
+      $rem: append($rem, $value);
+    }
+    
+    @else { 
+      $unit: unit($value);
+      $val: $value / ($value * 0 + 1); /* 1 */
+      
+      @if $unit == px {
+        $px : append($px,  $value);
+        $rem: append($rem, ($val / 10 * 1rem));
+      }
+      
+      @if $unit == rem {
+        $px : append($px,  ($val * 10 * 1px));
+        $rem: append($rem, $value);
+      }
+    }
+  }
+  
+  #{$property}: $px;
+  #{$property}: $rem;
+}
+
+
+
+/* --------------------------------------------------------------- *
+ * A couple of mixins to handle positioning
+ * --------------------------------------------------------------- *
+ * CodePen: http://codepen.io/HugoGiraudel/pen/HDebE
+ * Article: http://hugogiraudel.com/2013/08/05/offsets-sass-mixin/
+ * ---------------------------------------------------------------
+ * 
+ * Private method
+ * Can be called but it's not the point
+ * ---------------------------------------------------------------
+ * $position : position
+ * $args     : list of offsets and values
+ *
+ */
+@mixin _position($position, $args) {
+
+  @each $o in top right bottom left {
+    $i: index($args, $o);
+    @if $i
+    and $i + 1 <= length($args) 
+    and type-of( nth($args, $i + 1) ) == number {
+      #{$o}: nth($args, $i + 1);
+    }
+  }
+  
+  position: $position;
+}
+
+/**
+ * Mixin triplet calling the private mixin
+ * with the appropriate position value
+ * ---------------------------------------------------------------
+ * $args : list of offsets and values
+ *
+ * ---------------------------------------------------------------
+ * Usage
+ *
+ * .el {
+ *     left   :  will be applied (10px)
+ *     right  : won't be applied (not numeric)
+ *     top    :  will be applied (1em)
+ *     bottom : won't be applied (no value)
+ * 	   
+ * 	   @include absolute(left 10px right "HAHAHA!" top 1em bottom);
+ */
+@mixin absolute($args) {
+  @include _position(absolute, $args);
+}
+
+@mixin relative($args) {
+  @include _position(relative, $args);
+}
+
+@mixin fixed($args) {
+  @include _position(fixed,    $args);
+}
+
+
+
+/* --------------------------------------------------------------- *
+ * A WebKit scrollbar styling mixin
+ * --------------------------------------------------------------- *
+ * CodePen: http://codepen.io/HugoGiraudel/pen/KFDuB
+ * ---------------------------------------------------------------
+ * 
+ * Webkit (and IE) scrollbar styling
+ * ---------------------------------------------------------------
+ * $size      : width for vertical scrollbars, height for horizontal scrollbars
+ * $primary   : main color (scrollbar)
+ * $secondary : secondary color (background)
+ *
+ * ---------------------------------------------------------------
+ * Usage
+ * @include scrollbar(.3em, deepskyblue);
+ * 
+ */
+@mixin scrollbar($size, $primary, $secondary: lighten($primary, 25%)) {
+	::-webkit-scrollbar {
+		width:  $size;
+		height: $size;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: $primary;
+	}
+
+	::-webkit-scrollbar-track {
+		background: $secondary;
+	}
+  
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $primary;
+    scrollbar-track-color: $secondary;
+  }
+}
+
+
