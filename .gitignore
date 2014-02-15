@@ -6,7 +6,7 @@
 /public/uploads
 composer.phar
 composer.lock
-.env.dev.php
+.env.local.php
 .env.php
 .DS_Store
 Thumbs.db
