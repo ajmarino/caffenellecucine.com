@@ -1,11 +1,29 @@
 {
-	"name": "App",
-	"jam": {
-		"packageDir": "app/public/js/vendor",
-		"baseUrl": "app",
-		"dependencies": {
-			"jquery"   : null,
-			"jquery-ui" : null
-		}
-	}
+  "name": "caffenellecucine.com",
+  "version": "2.0.0",
+  "description": "Website for Caffe Nelle Cucine",
+  "main": "Gruntfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ajmarino/caffenellecucine.com"
+  },
+  "author": "AJ Marino",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ajmarino/caffenellecucine.com/issues"
+  },
+  "homepage": "https://caffenellecucine.com",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-imagemin": "~0.5.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-uglify": "~0.3.2",
+    "grunt-contrib-sass": "~0.7.2",
+    "grunt-autoprefixer": "~0.6.3",
+    "load-grunt-tasks": "~0.2.1",
+    "grunt-csso": "~0.5.3"
+  }
 }

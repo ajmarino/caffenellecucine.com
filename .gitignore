@@ -1,3 +1,12 @@
-/app/dummy/*
-/app/public/js/vendor/*
+/.sass-cache/
+/bootstrap/compiled.php
+/includes
+/node_modules
+/vendor
+/public/uploads
+composer.phar
+composer.lock
+.env.dev.php
+.env.php
 .DS_Store
+Thumbs.db
