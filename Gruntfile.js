@@ -13,6 +13,20 @@ module.exports = function (grunt) {
 				 " * <%= pkg.version %> | <%= grunt.template.today('yyyy-mm-dd') %>\n" +
 				 " */\n",
 
+
+		/**
+		 * Checks css against Can I Use and adds/removes vendor prefixes as needed
+		 */
+		autoprefixer : {
+			main : {
+				options : {
+					browsers : ['last 2 versions', 'ie 9']
+				},
+				src : "public/css/main.css"
+			}
+		},
+
+
 		/**
 		 * Deletes old versions of files to help with cache busting, at least i think so
 		 */
@@ -21,6 +35,7 @@ module.exports = function (grunt) {
 			sass : ['public/css/main.css', 'public/css/main.min.css']
 		},
 		
+
 		/**
 		 * Combines all js files into a single file
 		 */
@@ -32,6 +47,42 @@ module.exports = function (grunt) {
 			js : {
 				src : ["src/js/*.js"],
 				dest : "public/js/app.js"	
+			}
+		},
+
+
+		/**
+		 * Optimizes and minifies css
+		 * CSSO - http://bem.info/tools/optimizers/csso/description/
+		 * Grunt-Csso - https://npmjs.org/package/grunt-csso
+		 */
+		csso : {
+			minify : {
+				options : {
+					report : 'min',
+					banner : '<%= banner %>'
+				},
+				files : {
+					'public/css/main.min.css' : ['public/css/main.css']
+				}
+			}
+		},
+
+		
+		/**
+		 * Minifies images 
+		 */
+		imagemin : {
+			dynamic: {
+				options : {
+					optimizationLevel : 3,
+				},
+				files: [{
+					expand : true,
+					cwd    : 'src/images',
+					src    : ['**/*.{png,jpg,gif}'],
+					dest   : 'public/img/'
+				}]
 			}
 		},
 
@@ -58,6 +109,23 @@ module.exports = function (grunt) {
 
 
 		/**
+		 * Compiles sass files
+		 * only need to compile 1 file as that should include everything else
+		 */
+		sass : {
+			dist : {
+				options : {
+					style : "compact",
+					banner : "<%= banner %>"
+				},
+				files : {
+					"public/css/main.css" : "src/sass/main.scss"
+				}
+			}
+		},
+
+
+		/**
 		 * Combines, minifies, and creates a source map for the js files
 		 * dev - main js files
 		 * scrollbar - 3 librarys used to create stylized scrollbar in modals
@@ -76,50 +144,6 @@ module.exports = function (grunt) {
 			}
 		},
 
-		/**
-		 * Compiles sass files
-		 * only need to compile 1 file as that should include everything else
-		 */
-		sass : {
-			dist : {
-				options : {
-					style : "compact",
-					banner : "<%= banner %>"
-				},
-				files : {
-					"public/css/main.css" : "src/sass/main.scss"
-				}
-			}
-		},
-
-		/**
-		 * Checks css against Can I Use and adds/removes vendor prefixes as needed
-		 */
-		autoprefixer : {
-			main : {
-				options : {
-					browsers : ['last 2 versions', 'ie 9']
-				},
-				src : "public/css/main.css"
-			}
-		},
-
-		/**
-		 * Optimizes and minifies css
-		 * CSSO - http://bem.info/tools/optimizers/csso/description/
-		 * Grunt-Csso - https://npmjs.org/package/grunt-csso
-		 */
-		csso : {
-			minify : {
-				options : {
-					report : 'min',
-					banner : '<%= banner %>'
-				},
-				files : {
-					'public/css/main.min.css' : ['public/css/main.css']
-				}
-			}
-		},
 
 		/**
 		 * Watches files in /src for changes and runs the appriopate tasks
@@ -133,7 +157,7 @@ module.exports = function (grunt) {
 				files : ["src/sass/main.scss", "src/sass/**/*.scss"],
 				tasks : ["css"]
 			}
-		},
+		}
 
 	});
 
@@ -141,9 +165,9 @@ module.exports = function (grunt) {
 	/**
 	 * Custom task that runs other tasks defined in initConfig
 	 */
-	grunt.registerTask("default", ['css', 'js']);
-	grunt.registerTask("js", ['clean:js', 'concat', 'uglify:dev', 'jshint', 'cache-bust:js']);
-	grunt.registerTask("css", ['sass', 'autoprefixer', 'csso', 'cache-bust:css']);
+	grunt.registerTask("default", 'Compile all sass and js source files', ['css', 'js']);
+	grunt.registerTask("js", "Compile just the js source files", ['clean:js', 'concat', 'uglify:dev', 'jshint', 'cache-bust:js']);
+	grunt.registerTask("css", "Compile just the sass source files", ['sass', 'autoprefixer', 'csso', 'cache-bust:css']);
 
 
 	/**
