@@ -31,8 +31,9 @@ module.exports = function (grunt) {
 		 * Deletes old versions of files to help with cache busting, at least i think so
 		 */
 		clean : {
-			js : ['public/js/app.js', 'public/js/app.min.js', 'public/js/app.min.map'],
-			sass : ['public/css/main.css', 'public/css/main.min.css']
+			js     : ['public/js/app.js', 'public/js/app.min.js', 'public/js/app.min.map'],
+			sass   : ['public/css/main.css', 'public/css/main.min.css'],
+			images : ['src/images/*.png', 'src/images/*.jpg', 'src/images/*.gif']
 		},
 		
 
@@ -42,10 +43,10 @@ module.exports = function (grunt) {
 		concat : {
 			options : {
 				seperator : ";",
-				banner : "<%= banner %>\n"
+				banner    : "<%= banner %>\n"
 			},
 			js : {
-				src : ["src/js/*.js"],
+				src  : ["src/js/*.js"],
 				dest : "public/js/app.js"	
 			}
 		},
@@ -103,7 +104,7 @@ module.exports = function (grunt) {
 				jshintrc : ".jshintrc"
 			},
 			target: {
-				src: ['src/js/*.js']
+				src : ['src/js/*.js']
 			}
 		},
 
@@ -115,7 +116,7 @@ module.exports = function (grunt) {
 		sass : {
 			dist : {
 				options : {
-					style : "compact",
+					style  : "compact",
 					banner : "<%= banner %>"
 				},
 				files : {
@@ -133,10 +134,10 @@ module.exports = function (grunt) {
 		uglify : {
 			dev : {
 				options : {
-					mangle : true,
+					mangle     : true,
 					compressed : true,
-					banner : "<%= banner %>",
-					sourceMap : "app.map",
+					banner     : "<%= banner %>",
+					sourceMap  : "app.map",
 				},
 				files : {
 					"public/js/app.min.js" : ["src/js/*.js"]
@@ -156,6 +157,10 @@ module.exports = function (grunt) {
 			sass : {
 				files : ["src/sass/main.scss", "src/sass/**/*.scss"],
 				tasks : ["css"]
+			},
+			images : {
+				files : ["src/images/*.*"],
+				tasks : ["images"]
 			}
 		}
 
@@ -165,9 +170,10 @@ module.exports = function (grunt) {
 	/**
 	 * Custom task that runs other tasks defined in initConfig
 	 */
-	grunt.registerTask("default", 'Compile all sass and js source files', ['css', 'js']);
+	grunt.registerTask("default", 'Compile all sass and js source files', ['clean', 'css', 'js', 'images']);
 	grunt.registerTask("js", "Compile just the js source files", ['clean:js', 'concat', 'uglify:dev', 'jshint', 'cache-bust:js']);
 	grunt.registerTask("css", "Compile just the sass source files", ['sass', 'autoprefixer', 'csso', 'cache-bust:css']);
+	grunt.registerTask("images", "Optimizes images", ['imagemin', 'clean:images']);
 
 
 	/**

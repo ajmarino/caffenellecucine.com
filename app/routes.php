@@ -12,3 +12,6 @@
 */
 
 Route::get('/', 'HomeController@showIndex');
+
+
+Route::resource('items', 'ItemsController');
