@@ -28,7 +28,6 @@
 		</section>
 	
 		@include('layouts/_footer')
-		
 	</div>
 	
 	@if ($app->env !== 'local')

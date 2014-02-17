@@ -1,0 +1,19 @@
+/**
+ * Base page styles
+ */
+body { background: url(/img/body_bg.jpg) repeat center top; font-family: $serifFont; }
+
+.top-bar { background: url("/img/top-bar.jpg") repeat top center; height: 9px; }
+
+.container { background: url("/img/glow.jpg") top center no-repeat; padding-top: 25px; }
+
+.main-content { min-height: 400px;
+	p { font-family: $sansFont; color: $mainColor; line-height: 15px; margin-bottom: 10px;
+		@include typecsset-font-size(16px);
+
+		&.subhead { margin: 5px 0 15px 0; line-height: 20px;
+			@include typecsset-font-size(18px);
+		}
+	}
+}
+

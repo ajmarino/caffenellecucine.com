@@ -4,29 +4,29 @@
 	</a>
 	
 	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-		<i class="icon-reorder"></i>
+		<i class="fa fa-bars"></i>
 	</button>
 	
 	<ul class="nav nav-justified navbar-collapse collapse">
-		<li class="{{ Request::is('/') ? 'active' : '' }}">
+		<li class="{{ Request::path() == '/' ? 'active' : '' }}">
 			<a href="/">Home</a>
 		</li>
-		<li class="{{ Request::is('/coffee') ? 'active' : '' }}">
+		<li class="{{ Request::path() == 'coffee' ? 'active' : '' }}">
 			<a href="/coffee">Coffee Bar</a>
 		</li>
-		<li class="{{ Request::is('/breakfast') ? 'active' : '' }}">
+		<li class="{{ Request::path() == 'breakfast' ? 'active' : '' }}">
 			<a href="/breakfast">Breakfast</a>
 		</li>
-		<li class="{{ Request::is('/bakery') ? 'active' : '' }}">
+		<li class="{{ Request::path() == 'bakery' ? 'active' : '' }}">
 			<a href="/bakery">Bakery</a>
 		</li>
-		<li class="{{ Request::is('/lunch') ? 'active' : '' }}">
+		<li class="{{ Request::path() == 'lunch' ? 'active' : '' }}">
 			<a href="/lunch">Lunch</a>
 		</li>
-		<li class="{{ Request::is('/catering') ? 'active' : '' }}">
+		<li class="{{ Request::path() == 'catering' ? 'active' : '' }}">
 			<a href="/catering">Catering</a>
 		</li>
-		<li class="{{ Request::is('/contact') ? 'active' : '' }}">
+		<li class="{{ Request::path() == 'contact' ? 'active' : '' }}">
 			<a href="/contact">Contact</a>
 		</li>
 	</ul>

@@ -2,11 +2,20 @@ header { margin-bottom: 15px; position: relative;
 	.logo { display: block; width: 80%; max-width: 500px; margin: 0 auto 15px;
 		img { width: 100%;  }
 	}
-	.navbar-toggle { position: absolute; top: -20px; right: -10px; color: $mainColor; border: none; margin: 0;
+	.navbar-toggle {  color: $mainColor; border: none; margin: 0;
+		@include absolute(top 20px right 0);
 		@include transition($anim);
 
 		&:hover, &:focus { background-color: rgba($btnColor, .1); }
 		&:focus { outline: none; box-shadow: 0 0 4px rgba($btnColor, .1); }
+	}
+	.nav { margin: 0;
+		li {
+			&.active {
+				a { color: $tertairyColor; }
+			}
+
+		}
 	}
 	.navbar-collapse { border: none; box-shadow: none; background: url("/img/nav-bg.png") no-repeat center -64px;
 		// @media @tablet { padding-top: 24px; padding-bottom: 20px !important; background-position: center 0; }

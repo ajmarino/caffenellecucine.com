@@ -25,4 +25,8 @@ Route::get('catering', 'CateringController@showIndex');
 
 Route::get('contact', 'ContactController@showIndex');
 
-Route::resource('items', 'ItemsController');
+Route::get('items', array('before' => 'auth', function () {
+
+}));
+
+// Route::resource('items', 'ItemsController');

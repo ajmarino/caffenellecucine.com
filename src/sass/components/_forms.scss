@@ -1,0 +1,19 @@
+.form-control { background: #f0e4c5; color: #5b5a4e; font-family: $sansFont; border: none; border-radius: 5px; padding: 6px 10px; width: 100%;
+	border: 1px solid $mainColor; margin-bottom: 10px;
+	@include transition($anim);
+	@include typecsset-font-size(11px);
+
+	&:focus { background: #fcf3dd; outline: none; box-shadow: 0 0 5px $btnColor; border: 1px solid $tertairyColor; }
+}
+	
+.form-btn { text-decoration: none; font-family: $serifFont; text-transform: uppercase; letter-spacing: 1.5px; text-align: center; border: none; background: rgba($btnColor, 0.1); color: #b3b496; border-radius: 5px;
+	@include transition($anim);
+	@include typecsset-font-size(10px);
+
+	&:hover, &:focus { background: rgba($btnColor, 0.2); }
+}
+
+
+.control-label { color: $tertairyColor; text-transform: uppercase; letter-spacing: 1.5px; font-weight: normal;
+	@include typecsset-font-size(10px);
+}

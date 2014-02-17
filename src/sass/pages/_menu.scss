@@ -1,0 +1,44 @@
+.menu-side, .menu-text {
+	p {
+		a { color: $tertairyColor;
+			&:hover { color: $tertairyColor; text-decoration: none; border-bottom: 1px solid $tertairyColor; }
+		}
+	}
+}
+	
+.menu-side { position: relative; z-index: 5; 
+
+	nav { margin-bottom: 25px; border-top: $dottedBd;
+		a { color: $mainColor; display: block; padding: 5px; text-decoration: none; border-bottom: $dottedBd;
+			@include typecsset-font-size(16px);
+			@include transition($anim);
+
+			&:hover { color: $tertairyColor; }
+
+			&.active { color: $tertairyColor; }
+		}
+	}
+		
+}
+	
+.menu-sub-section { margin-bottom: 30px;
+	h2 { color: $headlineColor; border-bottom: $dottedBd; margin: 2px 0 0; padding-bottom: 5px;
+		@include typecsset-font-size(24px);
+	}
+	ul { margin: 0; padding: 0; list-style: none; }
+	li { font-style: italic; padding: 5px 0; border-bottom: $dottedBd; line-height: 1.6em; margin-bottom: 0; position: relative;
+		h4 { display: block; color: #E8D4AF; font-style: normal; font-family: $sansFont; margin: 0 0 5px;
+			@include typecsset-font-size(18px);
+		}
+		p { margin-bottom: 0; }
+		.prices { position: absolute; top: 5px; right: 0; font-style: normal; color: $mainColor;
+			@include typecsset-font-size(14px);
+		}
+
+		&.extras {
+			span { font-family: $sansFont; color: $mainColor; line-height: 15px; margin-right: 10px;
+				@include typecsset-font-size(12px);
+			}
+		}
+	}
+}
