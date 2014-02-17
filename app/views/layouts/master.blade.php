@@ -18,7 +18,7 @@
 	
 	<script src="/js/vendor/modernizr-2.7.1.min.js"></script>
 </head>
-<body>
+<body @if ($app->env === 'local')class="dev"@endif>
 
 	<div class="container">
 		@include('layouts/_header')

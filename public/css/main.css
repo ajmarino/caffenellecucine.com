@@ -1,6 +1,6 @@
 /*
  * caffenellecucine.com
- * 2.0.0 | 2014-02-15
+ * 2.0.0 | 2014-02-16
  */
 
 @charset "UTF-8";
@@ -281,10 +281,189 @@
   .col-lg-offset-10 { margin-left: 83.33333%; }
   .col-lg-offset-11 { margin-left: 91.66667%; }
   .col-lg-offset-12 { margin-left: 100%; } }
+.nav { margin-bottom: 0; padding-left: 0; list-style: none; }
+.nav:before, .nav:after { content: " "; display: table; }
+.nav:after { clear: both; }
+.nav > li { position: relative; display: block; }
+.nav > li > a { position: relative; display: block; padding: 10px 15px; }
+.nav > li > a:hover, .nav > li > a:focus { text-decoration: none; background-color: #eeeeee; }
+.nav > li.disabled > a { color: #999999; }
+.nav > li.disabled > a:hover, .nav > li.disabled > a:focus { color: #999999; text-decoration: none; background-color: transparent; cursor: not-allowed; }
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus { background-color: #eeeeee; border-color: #428bca; }
+.nav .nav-divider { height: 1px; margin: 9px 0; overflow: hidden; background-color: #e5e5e5; }
+.nav > li > a > img { max-width: none; }
+
+.nav-tabs { border-bottom: 1px solid #dddddd; }
+.nav-tabs > li { float: left; margin-bottom: -1px; }
+.nav-tabs > li > a { margin-right: 2px; line-height: 1.42857; border: 1px solid transparent; border-radius: 4px 4px 0 0; }
+.nav-tabs > li > a:hover { border-color: #eeeeee #eeeeee #dddddd; }
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus { color: #555555; background-color: white; border: 1px solid #dddddd; border-bottom-color: transparent; cursor: default; }
+
+.nav-pills > li { float: left; }
+.nav-pills > li > a { border-radius: 4px; }
+.nav-pills > li + li { margin-left: 2px; }
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus { color: white; background-color: #428bca; }
+
+.nav-stacked > li { float: none; }
+.nav-stacked > li + li { margin-top: 2px; margin-left: 0; }
+
+.nav-justified, .nav-tabs.nav-justified { width: 100%; }
+.nav-justified > li, .nav-tabs.nav-justified > li { float: none; }
+.nav-justified > li > a, .nav-tabs.nav-justified > li > a { text-align: center; margin-bottom: 5px; }
+.nav-justified > .dropdown .dropdown-menu { top: auto; left: auto; }
+@media (min-width: 768px) { .nav-justified > li, .nav-tabs.nav-justified > li { display: table-cell; width: 1%; }
+  .nav-justified > li > a, .nav-tabs.nav-justified > li > a { margin-bottom: 0; } }
+
+.nav-tabs-justified, .nav-tabs.nav-justified { border-bottom: 0; }
+.nav-tabs-justified > li > a, .nav-tabs.nav-justified > li > a { margin-right: 0; border-radius: 4px; }
+.nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a, .nav-tabs-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:hover, .nav-tabs-justified > .active > a:focus, .nav-tabs.nav-justified > .active > a:focus { border: 1px solid #dddddd; }
+@media (min-width: 768px) { .nav-tabs-justified > li > a, .nav-tabs.nav-justified > li > a { border-bottom: 1px solid #dddddd; border-radius: 4px 4px 0 0; }
+  .nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a, .nav-tabs-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:hover, .nav-tabs-justified > .active > a:focus, .nav-tabs.nav-justified > .active > a:focus { border-bottom-color: white; } }
+
+.tab-content > .tab-pane { display: none; }
+.tab-content > .active { display: block; }
+
+.nav-tabs .dropdown-menu { margin-top: -1px; border-top-right-radius: 0; border-top-left-radius: 0; }
+
+.carousel { position: relative; }
+
+.carousel-inner { position: relative; overflow: hidden; width: 100%; }
+.carousel-inner > .item { display: none; position: relative; -webkit-transition: 0.6s ease-in-out left; transition: 0.6s ease-in-out left; }
+.carousel-inner > .item > img, .carousel-inner > .item > a > img { display: block; max-width: 100%; height: auto; line-height: 1; }
+.carousel-inner > .active, .carousel-inner > .next, .carousel-inner > .prev { display: block; }
+.carousel-inner > .active { left: 0; }
+.carousel-inner > .next, .carousel-inner > .prev { position: absolute; top: 0; width: 100%; }
+.carousel-inner > .next { left: 100%; }
+.carousel-inner > .prev { left: -100%; }
+.carousel-inner > .next.left, .carousel-inner > .prev.right { left: 0; }
+.carousel-inner > .active.left { left: -100%; }
+.carousel-inner > .active.right { left: 100%; }
+
+.carousel-control { position: absolute; top: 0; left: 0; bottom: 0; width: 15%; opacity: 0.5; filter: alpha(opacity=50); font-size: 20px; color: white; text-align: center; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); }
+.carousel-control.left { background-image: -webkit-linear-gradient(left, color-stop(rgba(0, 0, 0, 0.5) 0%), color-stop(rgba(0, 0, 0, 0.0001) 100%)); background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%); background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%); background-repeat: repeat-x; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1); }
+.carousel-control.right { left: auto; right: 0; background-image: -webkit-linear-gradient(left, color-stop(rgba(0, 0, 0, 0.0001) 0%), color-stop(rgba(0, 0, 0, 0.5) 100%)); background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%); background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%); background-repeat: repeat-x; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1); }
+.carousel-control:hover, .carousel-control:focus { outline: none; color: white; text-decoration: none; opacity: 0.9; filter: alpha(opacity=90); }
+.carousel-control .icon-prev, .carousel-control .icon-next, .carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right { position: absolute; top: 50%; z-index: 5; display: inline-block; }
+.carousel-control .icon-prev, .carousel-control .glyphicon-chevron-left { left: 50%; }
+.carousel-control .icon-next, .carousel-control .glyphicon-chevron-right { right: 50%; }
+.carousel-control .icon-prev, .carousel-control .icon-next { width: 20px; height: 20px; margin-top: -10px; margin-left: -10px; font-family: serif; }
+.carousel-control .icon-prev:before { content: '\2039'; }
+.carousel-control .icon-next:before { content: '\203a'; }
+
+.carousel-indicators { position: absolute; bottom: 10px; left: 50%; z-index: 15; width: 60%; margin-left: -30%; padding-left: 0; list-style: none; text-align: center; }
+.carousel-indicators li { display: inline-block; width: 10px; height: 10px; margin: 1px; text-indent: -999px; border: 1px solid white; border-radius: 10px; cursor: pointer; background-color: #000 \9; background-color: transparent; }
+.carousel-indicators .active { margin: 0; width: 12px; height: 12px; background-color: white; }
+
+.carousel-caption { position: absolute; left: 15%; right: 15%; bottom: 20px; z-index: 10; padding-top: 20px; padding-bottom: 20px; color: white; text-align: center; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); }
+.carousel-caption .btn { text-shadow: none; }
+
+@media screen and (min-width: 768px) { .carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-prev, .carousel-control .icon-next { width: 30px; height: 30px; margin-top: -15px; margin-left: -15px; font-size: 30px; }
+  .carousel-caption { left: 20%; right: 20%; padding-bottom: 30px; }
+  .carousel-indicators { bottom: 20px; } }
+* { -moz-box-sizing: border-box; box-sizing: border-box; }
+
+*:before, *:after { -moz-box-sizing: border-box; box-sizing: border-box; }
+
+html { font-size: 62.5%; -webkit-tap-highlight-color: transparent; }
+
+body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857; color: #333333; background-color: white; }
+
+input, button, select, textarea { font-family: inherit; font-size: inherit; line-height: inherit; }
+
+a { color: #428bca; text-decoration: none; }
+a:hover, a:focus { color: #2a6496; text-decoration: underline; }
+a:focus { outline: thin dotted; outline: 5px auto -webkit-focus-ring-color; outline-offset: -2px; }
+
+figure { margin: 0; }
+
+img { vertical-align: middle; }
+
+.img-responsive { display: block; max-width: 100%; height: auto; }
+
+.img-rounded { border-radius: 6px; }
+
+.img-thumbnail { padding: 4px; line-height: 1.42857; background-color: white; border: 1px solid #dddddd; border-radius: 4px; -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; display: inline-block; max-width: 100%; height: auto; }
+
+.img-circle { border-radius: 50%; }
+
+hr { margin-top: 20px; margin-bottom: 20px; border: 0; border-top: 1px solid #eeeeee; }
+
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
+
+/** Font Settings */
 /* --------------------------------------------------------------- * A REM-PX Sass mixin --------------------------------------------------------------- * CodePen: http://codepen.io/HugoGiraudel/pen/xsKdH Article: http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/  $property : the property you want to apply a value to $values   : the values you want to apply to $property --------------------------------------------------------------- .el { 	   @include rem(font-size, 1.5rem); 	   @include rem(padding, 20px 10px); } --------------------------------------------------------------- 1. Removing the unit */
 /* --------------------------------------------------------------- * A couple of mixins to handle positioning --------------------------------------------------------------- * CodePen: http://codepen.io/HugoGiraudel/pen/HDebE Article: http://hugogiraudel.com/2013/08/05/offsets-sass-mixin/ ---------------------------------------------------------------  Private method Can be called but it's not the point --------------------------------------------------------------- $position : position $args     : list of offsets and values  */
 /** Mixin triplet calling the private mixin with the appropriate position value --------------------------------------------------------------- $args : list of offsets and values  --------------------------------------------------------------- Usage  .el { left   :  will be applied (10px) right  : won't be applied (not numeric) top    :  will be applied (1em) bottom : won't be applied (no value) 	    	   @include absolute(left 10px right "HAHAHA!" top 1em bottom); */
 /* --------------------------------------------------------------- * A WebKit scrollbar styling mixin --------------------------------------------------------------- * CodePen: http://codepen.io/HugoGiraudel/pen/KFDuB ---------------------------------------------------------------  Webkit (and IE) scrollbar styling --------------------------------------------------------------- $size      : width for vertical scrollbars, height for horizontal scrollbars $primary   : main color (scrollbar) $secondary : secondary color (background)  --------------------------------------------------------------- Usage @include scrollbar(.3em, deepskyblue);  */
+/** Typecsset  Typecsset is a small, unopinionated library for creating beautifully set type on the web. Typecsset gives perfect vertical rhythm at any configurable font size, as well as many other typographical niceties. */
+/*------------------------------------*\ #SHARED
+\*------------------------------------*/
+/** A lot of elements in Typecsset need to share some declarations (mainly for vertical rhythm), so we `@extend` some silent classes. */
+h1, h2, h3, h4, h5, h6, ul, ol, dd, p, address, pre, blockquote, table { margin: 0; padding: 0; }
+
+h1, h2, h3, h4, h5, h6, ul, ol, dd, p, address, pre, blockquote, table { margin-bottom: 24px; margin-bottom: 1.5rem; }
+
+/*------------------------------------*\ #BASE
+\*------------------------------------*/
+/** 1. Set the base element’s `font-size` to the value of your choosing. Set in ems, assuming a browser default of 16px. 2. Work out the unitless `line-height` for your project based around your desired `line-height` (defined previously in pixels), and your project’s base font size. */
+/** 3. If you have chosen to display a baseline grid, we turn it on here. */
+html { font-size: 1em; /* [1] */ line-height: 1.5; /* [2] */ background-image: url(http://basehold.it/i/24); /* [3] */ }
+
+body { margin: 0; }
+
+/*------------------------------------*\ #HEADINGS
+\*------------------------------------*/
+h1 { font-size: 48px; font-size: 3rem; line-height: 1; }
+
+h2 { font-size: 36px; font-size: 2.25rem; line-height: 1.33333; }
+
+h3 { font-size: 30px; font-size: 1.875rem; line-height: 1.6; }
+
+h4 { font-size: 24px; font-size: 1.5rem; line-height: 1; }
+
+h5 { font-size: 20px; font-size: 1.25rem; line-height: 1.2; }
+
+h6 { font-size: 18px; font-size: 1.125rem; line-height: 1.33333; }
+
+/*------------------------------------*\ #LISTS
+\*------------------------------------*/
+ul, ol, dd { margin-left: 48px; margin-left: 3rem; }
+
+li > ul, li > ol { margin-bottom: 0; }
+
+/*------------------------------------*\ #PARAGRAPHS
+\*------------------------------------*/
+/** Not strictly a paragraph, but probably doesn’t need its own section. */
+/*------------------------------------*\ #CODE
+\*------------------------------------*/
+/** 1. Fix an odd quirk whereby, without this, code blocks are rendered at a font-size smaller than 1em. */
+code, kbd, pre, samp { font-family: monospace, monospace; /* [1] */ }
+
+/*------------------------------------*\ #QUOTES
+\*------------------------------------*/
+/** 1. Hang the opening quote of the blockquote. */
+blockquote { text-indent: -0.41em; /* [1] */ }
+
+/** Set up quote marks on quoting elements. This is very English-based, so we are using “, ”, ‘, and ’ quotes. */
+blockquote { quotes: "“" "”"; margin-left: 48px; margin-left: 3rem; }
+blockquote p:before { content: "“"; content: open-quote; }
+blockquote p:after { content: ""; content: no-close-quote; }
+blockquote p:last-of-type:after { content: "”"; content: close-quote; }
+
+q { quotes: "‘" "’" "“" "”"; /** If an element opens with an inline quote, let’s hang that. */ }
+q:before { content: "‘"; content: open-quote; }
+q:after { content: "’"; content: close-quote; }
+q q:before { content: "“"; content: open-quote; }
+q q:after { content: "”"; content: close-quote; }
+q:first-child { display: inline-block; text-indent: -0.22em; }
+
+/*------------------------------------*\ #TABLES
+\*------------------------------------*/
+/** Crude table styles; tables are very difficult to keep on the baseline. */
+table { width: 100%; border-collapse: collapse; border-spacing: 0; }
+
+th, td { padding: 12px; }
+
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 /** 1. Set default font family to sans-serif. 2. Prevent iOS text size adjust after orientation change, without disabling user zoom. */
 html { font-family: sans-serif; /* 1 */ -ms-text-size-adjust: 100%; /* 2 */ -webkit-text-size-adjust: 100%; /* 2 */ }
@@ -414,7 +593,7 @@ td, th { padding: 0; }
 /*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
 /* What follows is the result of much research on cross-browser styling. Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal, Kroc Camen, and the H5BP dev community and team. */
 /* ========================================================================== Base styles: opinionated defaults ========================================================================== */
-html { color: #222; font-size: 1em; line-height: 1.4; }
+html { color: #222; font-size: 16px; font-size: 1rem; line-height: 1.5; }
 
 /* Remove text-shadow in selection highlight: h5bp.com/i These selection rule sets have to be separate. Customize the background color to match your design. */
 ::-moz-selection { background: #b3d4fc; text-shadow: none; }
@@ -449,73 +628,26 @@ textarea { resize: vertical; }
 /* Hide visually and from screenreaders, but maintain layout */
 .invisible { visibility: hidden; }
 
-/** Typecsset  Typecsset is a small, unopinionated library for creating beautifully set type on the web. Typecsset gives perfect vertical rhythm at any configurable font size, as well as many other typographical niceties. */
-/*------------------------------------*\ #SHARED
-\*------------------------------------*/
-/** A lot of elements in Typecsset need to share some declarations (mainly for vertical rhythm), so we `@extend` some silent classes. */
-h1, h2, h3, h4, h5, h6, ul, ol, dd, p, address, pre, blockquote, table { margin: 0; padding: 0; }
+header { margin-bottom: 15px; position: relative; }
+header .logo { display: block; width: 80%; max-width: 500px; margin: 0 auto 15px; }
+header .logo img { width: 100%; }
+header .navbar-toggle { position: absolute; top: -20px; right: -10px; color: #f4e6cc; border: none; margin: 0; -webkit-transition: all 0.3s linear; transition: all 0.3s linear; }
+header .navbar-toggle:hover, header .navbar-toggle:focus { background-color: rgba(222, 219, 167, 0.1); }
+header .navbar-toggle:focus { outline: none; box-shadow: 0 0 4px rgba(222, 219, 167, 0.1); }
+header .navbar-collapse { border: none; box-shadow: none; background: url("/img/nav-bg.png") no-repeat center -64px; }
+header:hover { background: none; }
 
-h1, h2, h3, h4, h5, h6, ul, ol, dd, p, address, pre, blockquote, table { margin-bottom: 24px; margin-bottom: 1.5rem; }
+.nav { padding-left: 0; padding-right: 0; }
+.nav:before, .nav:after { content: " "; display: table; }
+.nav:after { clear: both; }
+.nav li { text-align: center; }
+.nav a:link, .nav a:visited { color: #f4e6cc; text-transform: uppercase; letter-spacing: 1.5px; border-radius: 5px; padding-left: 0; padding-right: 0; -webkit-transition: all 0.3s linear; transition: all 0.3s linear; font-size: 10px; font-size: 0.625rem; line-height: 2.4; }
+.nav a:hover, .nav a:focus { background-color: rgba(244, 230, 204, 0.1) !important; }
 
-/*------------------------------------*\ #BASE
-\*------------------------------------*/
-/** 1. Set the base element’s `font-size` to the value of your choosing. Set in ems, assuming a browser default of 16px. 2. Work out the unitless `line-height` for your project based around your desired `line-height` (defined previously in pixels), and your project’s base font size. */
-html { font-size: 1em; /* [1] */ line-height: 1.5; /* [2] */ }
-
-body { margin: 0; }
-
-/*------------------------------------*\ #HEADINGS
-\*------------------------------------*/
-h1 { font-size: 48px; font-size: 3rem; line-height: 1; }
-
-h2 { font-size: 36px; font-size: 2.25rem; line-height: 1.33333; }
-
-h3 { font-size: 30px; font-size: 1.875rem; line-height: 1.6; }
-
-h4 { font-size: 24px; font-size: 1.5rem; line-height: 1; }
-
-h5 { font-size: 20px; font-size: 1.25rem; line-height: 1.2; }
-
-h6 { font-size: 18px; font-size: 1.125rem; line-height: 1.33333; }
-
-/*------------------------------------*\ #LISTS
-\*------------------------------------*/
-ul, ol, dd { margin-left: 48px; margin-left: 3rem; }
-
-li > ul, li > ol { margin-bottom: 0; }
-
-/*------------------------------------*\ #PARAGRAPHS
-\*------------------------------------*/
-/** Not strictly a paragraph, but probably doesn’t need its own section. */
-/*------------------------------------*\ #CODE
-\*------------------------------------*/
-/** 1. Fix an odd quirk whereby, without this, code blocks are rendered at a font-size smaller than 1em. */
-code, kbd, pre, samp { font-family: monospace, monospace; /* [1] */ }
-
-/*------------------------------------*\ #QUOTES
-\*------------------------------------*/
-/** 1. Hang the opening quote of the blockquote. */
-blockquote { text-indent: -0.41em; /* [1] */ }
-
-/** Set up quote marks on quoting elements. This is very English-based, so we are using “, ”, ‘, and ’ quotes. */
-blockquote { quotes: "“" "”"; margin-left: 48px; margin-left: 3rem; }
-blockquote p:before { content: "“"; content: open-quote; }
-blockquote p:after { content: ""; content: no-close-quote; }
-blockquote p:last-of-type:after { content: "”"; content: close-quote; }
-
-q { quotes: "‘" "’" "“" "”"; /** If an element opens with an inline quote, let’s hang that. */ }
-q:before { content: "‘"; content: open-quote; }
-q:after { content: "’"; content: close-quote; }
-q q:before { content: "“"; content: open-quote; }
-q q:after { content: "”"; content: close-quote; }
-q:first-child { display: inline-block; text-indent: -0.22em; }
-
-/*------------------------------------*\ #TABLES
-\*------------------------------------*/
-/** Crude table styles; tables are very difficult to keep on the baseline. */
-table { width: 100%; border-collapse: collapse; border-spacing: 0; }
-
-th, td { padding: 12px; }
+.carousel { padding: 0; }
+.carousel .carousel-indicators li { -webkit-transition: all 0.3s linear; transition: all 0.3s linear; }
+.carousel .item img { width: 100%; }
+.carousel .carousel-control i { position: absolute; top: 50%; font-size: 18px; font-size: 1.125rem; line-height: 1.33333; }
 
 @media print { * { text-shadow: none !important; color: #000 !important; background: transparent !important; box-shadow: none !important; }
   a, a:visited { text-decoration: underline; }

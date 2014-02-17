@@ -13,5 +13,16 @@
 
 Route::get('/', 'HomeController@showIndex');
 
+Route::get('coffee', 'MenuController@showCoffee');
+Route::get('breakfast', 'MenuController@showBreakfast');
+Route::get('lunch', 'MenuController@showLunch');
+Route::get('bakery', 'MenuController@showBakery');
+Route::get('breads', 'MenuController@showBreads');
+Route::get('deli', 'MenuController@showDeli');
+Route::get('ravoli', 'MenuController@showRavoli');
+
+Route::get('catering', 'CateringController@showIndex');
+
+Route::get('contact', 'ContactController@showIndex');
 
 Route::resource('items', 'ItemsController');

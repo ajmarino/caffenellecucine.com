@@ -1,0 +1,14 @@
+.nav { padding-left: 0; padding-right: 0;
+	@include clearfix;
+
+	li { text-align: center; }
+
+	a {
+		&:link, &:visited { color: $mainColor; text-transform: uppercase; letter-spacing: 1.5px; border-radius: 5px; padding-left: 0; padding-right: 0;
+			@include transition($anim);
+			@include typecsset-font-size(10px);
+		}
+		&:hover, &:focus { background-color: rgba($mainColor, .1) !important; }
+		
+	}
+}

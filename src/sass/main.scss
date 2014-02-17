@@ -2,16 +2,28 @@
 @import "../../includes/bootstrap-sass/vendor/assets/stylesheets/bootstrap/variables";
 @import "../../includes/bootstrap-sass/vendor/assets/stylesheets/bootstrap/mixins";
 
+
 @import "../../includes/breakpoint-sass/stylesheets/breakpoint";
 
-@import "../../includes/bootstrap-sass/vendor/assets/stylesheets/bootstrap/grid";
 
+@import "../../includes/bootstrap-sass/vendor/assets/stylesheets/bootstrap/grid";
+@import "../../includes/bootstrap-sass/vendor/assets/stylesheets/bootstrap/navs";
+@import "../../includes/bootstrap-sass/vendor/assets/stylesheets/bootstrap/carousel";
+@import "../../includes/bootstrap-sass/vendor/assets/stylesheets/bootstrap/scaffolding";
+
+@import "general/variables";
 @import "general/helpers";
 
+
+@import "components/typecsset";
 @import "general/normalize-3.0.0";
 @import "general/base";
-@import "components/typecsset";
-
 @import "general/layout";
+
+
+@import "components/header";
+@import "components/nav";
+@import "components/carousel";
+
 
 @import "../../includes/bootstrap-sass/vendor/assets/stylesheets/bootstrap/print";

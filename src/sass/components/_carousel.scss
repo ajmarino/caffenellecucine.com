@@ -1,0 +1,20 @@
+.carousel { padding: 0;
+	.carousel-indicators {
+		li { @include transition($anim); }
+	}
+	
+	.carousel-inner { 
+		// @media @tablet { border-radius: 10px; }
+	}
+
+	.item { 
+		img { width: 100%;  }
+	}
+
+	.carousel-control {
+		i { position: absolute; top: 50%;
+			@include typecsset-font-size(18px);
+		}
+	}
+	
+}

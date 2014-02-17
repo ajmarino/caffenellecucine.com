@@ -1,0 +1,25 @@
+header { margin-bottom: 15px; position: relative;
+	.logo { display: block; width: 80%; max-width: 500px; margin: 0 auto 15px;
+		img { width: 100%;  }
+	}
+	.navbar-toggle { position: absolute; top: -20px; right: -10px; color: $mainColor; border: none; margin: 0;
+		@include transition($anim);
+
+		&:hover, &:focus { background-color: rgba($btnColor, .1); }
+		&:focus { outline: none; box-shadow: 0 0 4px rgba($btnColor, .1); }
+	}
+	.navbar-collapse { border: none; box-shadow: none; background: url("/img/nav-bg.png") no-repeat center -64px;
+		// @media @tablet { padding-top: 24px; padding-bottom: 20px !important; background-position: center 0; }
+	}
+
+	&:hover { background: none; }
+
+
+	// .new-item { position: absolute; bottom: 23px; right: 0; background: url("/img/new_badge.png") no-repeat scroll left center transparent; width:180px; padding-left: 40px; color: @mainColor; .font-size(1); text-transform: uppercase; letter-spacing: 1.5px; display: none; .transition(@anim);
+
+		// &:hover { color: @tertairyColor; text-decoration: none; }
+	
+		// @media @tablet { display: block; }
+		// @media @labtop { .size(250px, 30px); line-height: 3.1; }
+	// }
+}
