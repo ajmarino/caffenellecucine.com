@@ -18,19 +18,26 @@
 			&.active { color: $tertairyColor; }
 		}
 	}
-		
+	
+	.catering {
+		p { @include typecsset-font-size(12px);
+			line-height: 1.5;
+		}
+	}
 }
 	
 .menu-sub-section { margin-bottom: 30px;
-	h2 { color: $headlineColor; border-bottom: $dottedBd; margin: 2px 0 0; padding-bottom: 5px;
+	h2 { color: $headlineColor; border-bottom: $dottedBd; margin: 1px 0 0; padding-bottom: 10px; font-weight: normal;
 		@include typecsset-font-size(24px);
 	}
 	ul { margin: 0; padding: 0; list-style: none; }
-	li { font-style: italic; padding: 5px 0; border-bottom: $dottedBd; line-height: 1.6em; margin-bottom: 0; position: relative;
-		h4 { display: block; color: #E8D4AF; font-style: normal; font-family: $sansFont; margin: 0 0 5px;
+	li { font-style: italic; padding: 5px 0; border-bottom: $dottedBd; margin-bottom: 0; position: relative;
+		h4 { display: block; color: #E8D4AF; font-style: normal; font-family: $sansFont; margin: 0; font-weight: normal;
 			@include typecsset-font-size(18px);
 		}
-		p { margin-bottom: 0; }
+		p { margin-bottom: 0;
+			@include typecsset-font-size(13px);
+		}
 		.prices { position: absolute; top: 5px; right: 0; font-style: normal; color: $mainColor;
 			@include typecsset-font-size(14px);
 		}

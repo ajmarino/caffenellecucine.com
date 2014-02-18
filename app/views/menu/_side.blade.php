@@ -1,7 +1,9 @@
 <div class="menu-side col-sm-3">
 	<nav>
-		@foreach ($categories as $category)
-			<a class="{{ Request::path() == $category->url ? 'active' : '' }}" href="/{{ $category->url }}">{{ $category->name }}</a>
+		@foreach ($page['categories'] as $category)
+			@if ($category->name !== "Catering")
+				<a class="{{ Request::path() == $category->url ? 'active' : '' }}" href="/{{ $category->url }}">{{ $category->name }}</a>
+			@endif
 		@endforeach
 	</nav>
 
