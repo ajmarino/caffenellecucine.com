@@ -32,6 +32,7 @@
 							@endif
 						@endforeach
 					</ul>
+					
 				</section>
 			@endforeach
 		</div>
