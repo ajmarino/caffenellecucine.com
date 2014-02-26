@@ -2,13 +2,12 @@
 
 @section('content')
 	<div class="page-header">
-		<h1>{{ $page['title'] }}</h1>
+		<h3>&#187; Who We Are and What We Do</h3>
+		<h1 class="page-title">Our Menu</h1>
 	</div>
 
 	<div class="row">
 		@include('menu/_side')
-
-
 
 		<div class="meun-items col-sm-9">
 			@foreach ($page['sections'] as $section)

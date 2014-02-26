@@ -7,7 +7,7 @@ class MenuController extends BaseController {
 	 * @param  string $category - url of menu section to load
 	 */
 	private function getMenu($category) {
-		$page = [];
+		$page = array();
 		
 		// Retrieves all menu sections
 		$categories = DB::table('categories')
