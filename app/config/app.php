@@ -65,7 +65,7 @@ return array(
 	|
 	*/
 
-	'key' => 'SW7ATXfCyoOH1LMGsv7ukZKn4l9aqlhy',
+	'key' => 'bSJn0VsekpO9MgemblI4gY9lSUY50ycm',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -106,6 +106,7 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
+		'Frozennode\Administrator\AdministratorServiceProvider',
 	),
 
 	/*
