@@ -29,6 +29,12 @@
 		<li class="{{ Request::path() == 'contact' ? 'active' : '' }}">
 			<a href="/contact">Contact</a>
 		</li>
+		
+		<!-- 
+		@ if (Sentry::check())
+			<li>{ { link_to_route('login', 'Log In') } }</li>
+		@ endif
+		-->
 	</ul>
 	
 </header>

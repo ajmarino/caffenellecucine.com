@@ -25,8 +25,13 @@ Route::get('catering', 'CateringController@showIndex');
 
 Route::get('contact', 'ContactController@showIndex');
 
-Route::get('items', array('before' => 'auth', function () {
-
-}));
+Route::get('items', array('before' => 'auth', function () { }));
 
 // Route::resource('items', 'ItemsController');
+
+// Learning Laravel 4
+Route::controller('pages');
+Route::get('register', array('as' => 'postregister', 'uses' => 'pages@register'));
+Route::get('myaccount', array('as' => 'myaccount', 'uses' => 'pages@myaccount'));
+
+Route::post('register', array('as' => 'postregister', 'uses' => 'pages@register'));
