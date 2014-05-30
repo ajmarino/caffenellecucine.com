@@ -1,17 +1,17 @@
 
-@import "../../includes/bootstrap-sass/vendor/assets/stylesheets/bootstrap/variables";
-@import "../../includes/bootstrap-sass/vendor/assets/stylesheets/bootstrap/mixins";
+@import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/variables";
+@import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/mixins";
 
 
-@import "../../includes/breakpoint-sass/stylesheets/breakpoint";
+@import "../../bower_components/breakpoint-sass/stylesheets/breakpoint";
 
-@import "../../includes/bootstrap-sass/vendor/assets/stylesheets/bootstrap/scaffolding";
-@import "../../includes/bootstrap-sass/vendor/assets/stylesheets/bootstrap/buttons";
-@import "../../includes/bootstrap-sass/vendor/assets/stylesheets/bootstrap/carousel";
-@import "../../includes/bootstrap-sass/vendor/assets/stylesheets/bootstrap/grid";
-@import "../../includes/bootstrap-sass/vendor/assets/stylesheets/bootstrap/forms";
-@import "../../includes/bootstrap-sass/vendor/assets/stylesheets/bootstrap/navs";
-@import "../../includes/bootstrap-sass/vendor/assets/stylesheets/bootstrap/navbar";
+@import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/scaffolding";
+@import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/buttons";
+@import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/carousel";
+@import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/grid";
+@import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/forms";
+@import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/navs";
+@import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/navbar";
 
 @import "general/variables";
 @import "general/helpers";
@@ -32,4 +32,4 @@
 @import "components/mailchimp";
 
 
-@import "../../includes/bootstrap-sass/vendor/assets/stylesheets/bootstrap/print";
+@import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/print";

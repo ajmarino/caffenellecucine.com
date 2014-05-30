@@ -1,0 +1,23 @@
+{
+  "name": "CaffeNelleCucine",
+  "version": "2.0.0",
+  "authors": [
+    "AJ Marino <aj@ajmarino.com>"
+  ],
+  "license": "MIT",
+  "homepage": "www.caffenellecucine.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "~3.0.1",
+    "bootstrap-sass-official": "~3.1.1",
+    "jquery": "~2.1.1",
+    "modernizr": "~2.8.2"
+  }
+}

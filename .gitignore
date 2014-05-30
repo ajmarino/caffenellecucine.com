@@ -1,5 +1,6 @@
 /.sass-cache/
 /bootstrap/compiled.php
+/bower_components
 /includes
 /node_modules
 /vendor
