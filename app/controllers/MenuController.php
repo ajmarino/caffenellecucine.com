@@ -75,6 +75,17 @@ class MenuController extends BaseController {
 		return View::make('menu.index')
 					->with('page', $page);
 	}
+
+
+	/**
+	 * Dinner Menu
+	 */
+	public function showDinner() {
+		$page = $this->getMenu("dinner");
+
+		return View::make('menu.index')
+					->with('page', $page);
+	}
 	
 
 	/**

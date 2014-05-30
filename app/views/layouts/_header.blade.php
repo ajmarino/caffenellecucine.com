@@ -23,6 +23,9 @@
 		<li class="{{ Request::path() == 'lunch' ? 'active' : '' }}">
 			<a href="/lunch">Lunch</a>
 		</li>
+		<li class="{{ Request::path() == 'dinner' ? 'active' : '' }}">
+			<a href="/dinner">Dinner</a>
+		</li>
 		<li class="{{ Request::path() == 'catering' ? 'active' : '' }}">
 			<a href="/catering">Catering</a>
 		</li>

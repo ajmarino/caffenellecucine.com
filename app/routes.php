@@ -16,6 +16,7 @@ Route::get('/', 'HomeController@showIndex');
 Route::get('coffee', 'MenuController@showCoffee');
 Route::get('breakfast', 'MenuController@showBreakfast');
 Route::get('lunch', 'MenuController@showLunch');
+Route::get('dinner', 'MenuController@showDinner');
 Route::get('bakery', 'MenuController@showBakery');
 Route::get('breads', 'MenuController@showBreads');
 Route::get('deli', 'MenuController@showDeli');
@@ -25,13 +26,14 @@ Route::get('catering', 'CateringController@showIndex');
 
 Route::get('contact', 'ContactController@showIndex');
 
+Route::get('styleguide', 'ThemeController@showIndex');
+
 Route::get('items', array('before' => 'auth', function () { }));
 
 // Route::resource('items', 'ItemsController');
 
 // Learning Laravel 4
-Route::controller('pages');
-Route::get('register', array('as' => 'postregister', 'uses' => 'pages@register'));
-Route::get('myaccount', array('as' => 'myaccount', 'uses' => 'pages@myaccount'));
-
-Route::post('register', array('as' => 'postregister', 'uses' => 'pages@register'));
+// Route::controller('pages');
+// Route::get('register', array('as' => 'postregister', 'uses' => 'pages@register'));
+// Route::get('myaccount', array('as' => 'myaccount', 'uses' => 'pages@myaccount'));
+// Route::post('register', array('as' => 'postregister', 'uses' => 'pages@register'));
