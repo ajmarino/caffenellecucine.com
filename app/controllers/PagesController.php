@@ -2,7 +2,8 @@
 
 class PagesController extends Controller {
 
-	function register() {
+	function register()
+	{
 		if ( Sentry::check() ) {
 			return Redirect::to('/admin/myaccount')
 		}
@@ -38,7 +39,8 @@ class PagesController extends Controller {
 	}
 
 
-	public function getLogin() {
+	public function getLogin()
+	{
 		if ( Sentry::check() ) {
 			return Redirect::to('')
 		}
@@ -50,4 +52,48 @@ class PagesController extends Controller {
 	}
 
 	
+
+	public function postLogin()
+	{
+		$rules = array(
+			'email'    => 'required|email',
+			'password' => 'required'
+		);
+		$input = Input::get();
+		$validation = Validator::make($input, $rules);
+
+		if ( $validation->fails() ) {
+			return Redirect::to_route('userLogin')
+							->with_errors($validation->errors)
+							->with_input();
+		}
+
+		$credentials = array(
+			'email'    => Input::get('email'),
+			'password' => Input::get('password')
+		);
+
+		if ( Sentry::authenticate($credentials, false) ) {
+			return Redirect::('myaccount')
+		} else {
+			return Redirect::to('login')
+							->with("error", "There is a problem with your credentials. Please try again.");
+		}
+	}
+
+
+	public function getMyaccount()
+	{
+		if ( !Sentry::check() ) {
+			return Redirect::to('login')
+							->with("error", "Please login to access your account.");
+		}
+
+		$user = Sentry::getUser();
+
+		return View::make('pages.myaccount')
+					->with("title", "Admin | My Account")
+					->with('class', 'myaccount');
+	}
+
 }
