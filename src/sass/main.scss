@@ -2,8 +2,9 @@
 @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/variables";
 @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/mixins";
 
-
 @import "../../bower_components/breakpoint-sass/stylesheets/breakpoint";
+
+@import "general/normalize";
 
 @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/scaffolding";
 @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/buttons";
@@ -15,21 +16,25 @@
 
 @import "general/variables";
 @import "general/helpers";
+@import "general/typecsset";
 
-@import "components/typecsset";
-@import "general/normalize-3.0.0";
-@import "general/base";
-@import "general/layout";
+
+@import "general/boilerplate";
 @import "general/typography";
 
-@import "pages/menu";
+
+@import "layout/base";
+@import "layout/header";
+@import "layout/nav";
+@import "layout/footer";
+
 
 @import "components/forms";
-@import "components/header";
-@import "components/nav";
 @import "components/carousel";
-@import "components/footer";
 @import "components/mailchimp";
+
+
+@import "pages/menu";
 
 
 @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/print";

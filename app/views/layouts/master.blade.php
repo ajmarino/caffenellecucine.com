@@ -9,7 +9,6 @@
 
 	<!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 	
-	<link rel="stylesheet" href="/css/font-awesome-4.0.3.min.css">
 	@if ($app->env === "local")
 		<link rel="stylesheet" href="/css/main.css">
 	@else
@@ -21,7 +20,7 @@
 <body @if ($app->env === 'local')class="dev"@endif>
 
 	<div class="container">
-		@include('layouts/_header')
+		@include('layouts/_header');
 		
 		<section class="main-content">
 			@yield('content')
