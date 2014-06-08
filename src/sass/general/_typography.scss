@@ -2,11 +2,11 @@
  * General Typography
  */
 
-h1, h2, h3, h4, h5 { font-family: $serifFont; }
+h1, h2, h3, h4, h5 { font-family: $sansFont; }
 
 h1 { font-weight: normal; color: $headlineColor; text-decoration: none; margin: 0 0 10px;
-	@include typecsset-font-size(49px);
+	@include typecsset-font-size(36px);
 }
 h3, .h3 { color: $tertairyColor; text-transform: uppercase; letter-spacing: 1.5px; margin: 10px 0 5px; font-weight: normal;
-	@include typecsset-font-size(10px);
+	@include typecsset-font-size(24px);
 }
