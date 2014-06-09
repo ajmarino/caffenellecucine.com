@@ -1,4 +1,15 @@
 
+$teal : #13d4d3;
+
+
+$topBarBg : #251505;
+
+$baseTextColor : #474747;
+
+$navHoverColor : $teal;
+
+
+
 
 $mainColor     : #f4e6cc;
 $accentColor   : #8a8571;
@@ -6,15 +17,16 @@ $tertairyColor : #b3b496;
 $headlineColor : #a2ccd0;
 $btnColor      : #dedba7;
 
+
 $dottedBd : 1px dotted $accentColor;
+
+
 
 $serifFont : Georgia, Palatino, serif;
 $sansFont  : 'Oswald', Helvetica, sans-serif;
 
 
 $anim: all 0.3s linear;
-
-
 
 /**
  * Font Settings
@@ -34,3 +46,13 @@ $breakpoints: (
 $bp-tablet  : 48em;  // 767px
 $bp-labtop  : 62em;  // 992px
 $bg-desktop : 75em;  // 1200px
+
+
+
+/**
+ * Z - Index
+ */
+$z-MenuLinks    : 5;
+$z-TopBarAngles : 10;
+
+

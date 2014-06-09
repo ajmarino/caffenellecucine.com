@@ -818,6 +818,7 @@ textarea.input-lg, select[multiple].input-lg { height: auto; }
 @font-face { font-family: 'Oswald'; src: url("/fonts/oswald-light-webfont.eot"); src: url("/fonts/oswald-light-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/oswald-light-webfont.woff") format("woff"), url("/fonts/oswald-light-webfont.ttf") format("truetype"), url("/fonts/oswald-light-webfont.svg#oswaldlight") format("svg"); font-weight: lighter; font-style: normal; }
 @font-face { font-family: 'Oswald'; src: url("/fonts/oswald-regular-webfont.eot"); src: url("/fonts/oswald-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/oswald-regular-webfont.woff") format("woff"), url("/fonts/oswald-regular-webfont.ttf") format("truetype"), url("/fonts/oswald-regular-webfont.svg#oswaldbook") format("svg"); font-weight: normal; font-style: normal; }
 /** Font Settings */
+/** Z - Index */
 /* --------------------------------------------------------------- * A REM-PX Sass mixin --------------------------------------------------------------- * CodePen: http://codepen.io/HugoGiraudel/pen/xsKdH Article: http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/  $property : the property you want to apply a value to $values   : the values you want to apply to $property --------------------------------------------------------------- .el { 	   @include rem(font-size, 1.5rem); 	   @include rem(padding, 20px 10px); } --------------------------------------------------------------- 1. Removing the unit */
 /* --------------------------------------------------------------- * A couple of mixins to handle positioning --------------------------------------------------------------- * CodePen: http://codepen.io/HugoGiraudel/pen/HDebE Article: http://hugogiraudel.com/2013/08/05/offsets-sass-mixin/ ---------------------------------------------------------------  Private method Can be called but it's not the point --------------------------------------------------------------- $position : position $args     : list of offsets and values  */
 /** Mixin triplet calling the private mixin with the appropriate position value --------------------------------------------------------------- $args : list of offsets and values  --------------------------------------------------------------- Usage  .el { left   :  will be applied (10px) right  : won't be applied (not numeric) top    :  will be applied (1em) bottom : won't be applied (no value) 	    	   @include absolute(left 10px right "HAHAHA!" top 1em bottom); */
@@ -937,12 +938,10 @@ h1 { font-weight: normal; color: #a2ccd0; text-decoration: none; margin: 0 0 10p
 h3, #mc_embed_signup label, .h3 { color: #b3b496; text-transform: uppercase; letter-spacing: 1.5px; margin: 10px 0 5px; font-weight: normal; font-size: 24px; font-size: 1.5rem; line-height: 1; }
 
 /** Base page styles */
-body { background: url(/img/body_bg.jpg) repeat center top; font-family: Georgia, Palatino, serif; }
-
-.container { background: url("/img/glow.jpg") top center no-repeat; padding-top: 25px; }
+body { background: url(/images/bg.jpg) repeat center top; font-family: Georgia, Palatino, serif; color: #474747; }
 
 .main-content { min-height: 400px; }
-.main-content p { font-size: 16px; font-size: 1rem; line-height: 1.5; font-family: "Oswald", Helvetica, sans-serif; color: #f4e6cc; line-height: 15px; margin-bottom: 10px; }
+.main-content p { font-size: 16px; font-size: 1rem; line-height: 1.5; font-family: "Oswald", Helvetica, sans-serif; line-height: 15px; margin-bottom: 10px; }
 .main-content p.subhead { font-size: 18px; font-size: 1.125rem; line-height: 1.33333; margin: 5px 0 15px 0; line-height: 20px; }
 
 header { margin-bottom: 15px; position: relative; }
@@ -956,12 +955,17 @@ header .nav li.active a { color: #b3b496; }
 header .navbar-collapse { border: none; box-shadow: none; background: url("/img/nav-bg.png") no-repeat center -64px; }
 header:hover { background: none; }
 
-.nav { padding-left: 0; padding-right: 0; }
-.nav:before, .nav:after { content: " "; display: table; }
-.nav:after { clear: both; }
-.nav li { text-align: center; }
-.nav a:link, .nav a:visited { color: #f4e6cc; text-transform: uppercase; letter-spacing: 1.5px; border-radius: 5px; padding-left: 0; padding-right: 0; -webkit-transition: all 0.3s linear; transition: all 0.3s linear; font-size: 10px; font-size: 0.625rem; line-height: 2.4; }
-.nav a:hover, .nav a:focus { background-color: rgba(244, 230, 204, 0.1) !important; }
+.menu-bar { background-color: #251505; height: 52px; box-shadow: inset 0 3px 3px #000; position: relative; }
+.menu-bar:before, .menu-bar:after { content: " "; display: table; }
+.menu-bar:after { clear: both; }
+.menu-bar:before { bottom: 0; left: 0; position: absolute; width: 100%; height: 6px; background: url(/images/top-bar-bg.png) repeat-x center top transparent; display: block; content: ""; z-index: 10; }
+.menu-bar a:link, .menu-bar a:visited { -webkit-transition: all 0.3s linear; transition: all 0.3s linear; font-size: 14px; font-size: 0.875rem; line-height: 1.71429; position: relative; font-family: "Oswald", Helvetica, sans-serif; color: white; text-transform: uppercase; letter-spacing: 1.5px; display: block; z-index: 5; }
+@media (min-width: 48em) { .menu-bar a:link, .menu-bar a:visited { padding: 14px 10px; display: inline-block; } }
+.menu-bar a:hover, .menu-bar a:focus { color: #13d4d3; text-decoration: none; }
+.menu-bar a.active { background: #13d4d3; }
+.menu-bar a.active:hover { color: white; }
+.menu-bar button { width: 28px; height: 28px; padding: 0; }
+.menu-bar .iconic-menu * { stroke: white; fill: white; }
 
 /** Main Footer */
 footer { background: url("/img/bottom.png") repeat-x 0 0; margin: 30px -15px; border-bottom: 1px dotted #8a8571; padding: 10px 0; }

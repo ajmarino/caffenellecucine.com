@@ -18,9 +18,11 @@
 	<script src="/js/vendor/modernizr-2.7.1.min.js"></script>
 </head>
 <body @if ($app->env === 'local')class="dev"@endif>
-
+	
+	@include('layouts/_header');
+	
 	<div class="container">
-		@include('layouts/_header');
+		
 		
 		<section class="main-content">
 			@yield('content')
@@ -35,6 +37,7 @@
 
 	<script src="/js/vendor/jquery-1.11.0.min.js"></script>
 	<script src="/js/vendor/bootstrap.min.js"></script>
+	<script src="/js/vendor/iconic-1.3.1.min.js"></script>
 	<script src="/js/app.min.js"></script>
 </body>
 </html>

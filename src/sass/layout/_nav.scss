@@ -1,14 +1,60 @@
-.nav { padding-left: 0; padding-right: 0;
+.menu-bar {
 	@include clearfix;
+	background-color: $topBarBg;
+	height: 52px;
+	box-shadow: inset 0 3px 3px #000;
+	position: relative;
 
-	li { text-align: center; }
+	&:before {
+		@include absolute(left 0 bottom 0);
+		@include size(100%, 6px);
+		background: url(/images/top-bar-bg.png) repeat-x center top transparent;
+		display: block;
+		content: "";
+		z-index: $z-TopBarAngles;
+	}
 
 	a {
-		&:link, &:visited { color: $mainColor; text-transform: uppercase; letter-spacing: 1.5px; border-radius: 5px; padding-left: 0; padding-right: 0;
+		&:link,
+		&:visited {
 			@include transition($anim);
-			@include typecsset-font-size(10px);
+			@include typecsset-font-size(14px);
+			position: relative;
+			font-family: $sansFont;
+			color: white;
+			text-transform: uppercase;
+			letter-spacing: 1.5px;
+			display: block;
+			z-index: $z-MenuLinks;
+
+			@include breakpoint($bp-tablet) {
+				padding: 14px 10px;
+				display: inline-block;
+			};
 		}
-		&:hover, &:focus { background-color: rgba($mainColor, .1) !important; }
+
+		&:hover,
+		&:focus {
+			color: $navHoverColor;
+			text-decoration: none;
+		}
+
+		&.active {
+			background: $navHoverColor;
+
+			&:hover { color: white; }
+		}
 		
+	}
+	
+	button {
+		@include square(28px);
+		padding: 0;
+	}
+	.iconic-menu {
+		* {
+			stroke: white;
+			fill: white;
+		}
 	}
 }
