@@ -7,6 +7,6 @@
 	"globals" : {
 		"jQuery" : true,
 		"$"      : true,
-		"App"    : true
+		"Caffe"    : true
 	}
 }

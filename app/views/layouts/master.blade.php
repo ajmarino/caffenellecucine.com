@@ -19,17 +19,13 @@
 </head>
 <body @if ($app->env === 'local')class="dev"@endif>
 	
-	@include('layouts/_header');
+	@include('layouts/_header')
 	
-	<div class="container">
-		
-		
-		<section class="main-content">
-			@yield('content')
-		</section>
+	<main class="" role="main">
+		@yield('content')	
+	</main>
 	
-		@include('layouts/_footer')
-	</div>
+	@include('layouts/_footer')
 	
 	@if ($app->env !== 'local')
 		@include('layouts/_tracking')

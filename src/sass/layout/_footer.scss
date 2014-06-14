@@ -1,31 +1,72 @@
 /**
  * Main Footer
  */
-footer { background: url("/img/bottom.png") repeat-x 0 0; margin: 30px -15px; border-bottom: $dottedBd; padding: 10px 0;
-	// @media @tablet { margin: 30px -15px; }
-
-	p { font-family: $sansFont; color: $mainColor; line-height: 15px; margin-bottom: 10px;
+footer {
+	margin: 30px 0;
+	border-bottom: $dottedBd;
+	padding: 10px 0;
+	
+	p {
 		@include typecsset-font-size(14px);
+		font-family: $serifFont;
+		line-height: 15px;
+		margin-bottom: 10px;
 	}
 	
-	.row { margin-left: 0; margin-right: 0; }
-
-	.view-more { color: $mainColor; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 15px; border-radius: 5px; background-color: rgba($mainColor, .1); border: none;
-		@include typecsset-font-size(10px);
+	.btn--view-more {
 		@include transition($anim);
+		@include typecsset-font-size(10px);
+		color: $navHoverColor;
+		text-transform: uppercase;
+		letter-spacing: 1.5px;
+		margin-bottom: 15px;
+		border-radius: 5px;
+		background-color: rgba($mainColor, .1);
+		border: none;
+		
+		&:hover,
+		&:focus {
+			background-color: rgba($mainColor, .3);
+			color: darken($navHoverColor, 10%);
 
-		&:hover, &:focus { background-color: rgba($mainColor, .3); color: $mainColor; }
+			.iconic-chevron * {
+				@include iconic-color(darken($navHoverColor, 10%));
+			}
+		}
+	
+		span {
+			@include square(16px);
+			display: inline-block;
+		}
+	
+		.iconic-chevron * {
+			@include iconic-color($navHoverColor);
+			@include transition($anim);
+		}
 	}
 
-	.about-us, .hours, .testimonials, .copy { padding-left: 15px; }
-
-	.testimonials, .hours { }
-	
-	.hours { margin-bottom: 15px; }
+	.content__block {
+		padding: 0 15px;
+		margin-bottom: 15px;
+	}
 
 	.testimonials {
-		blockquote, p { color: #f4e6cc; font-size: 12px; line-height: 15px; margin-bottom: 5px;  }
-		blockquote { padding-left: 15px; border-left: 1px dotted #8A8571; font-size: 13px; }
-		p { font-style: italic; text-align: right; }
+		blockquote,
+		p {
+			@include typecsset-font-size(12px);
+			color: #f4e6cc;
+			line-height: 15px;
+			margin-bottom: 5px;
+		}
+
+		blockquote {
+			@include typecsset-font-size(13px);
+			padding-left: 15px;
+			border-left: 1px dotted #8A8571;
+		}
+		p {
+			font-style: italic;
+			text-align: right;
+		}
 	}
 }

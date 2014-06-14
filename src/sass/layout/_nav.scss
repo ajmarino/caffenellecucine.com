@@ -1,9 +1,11 @@
-.menu-bar {
+.header__menu-bar {
+	
 	@include clearfix;
+	@include transition($anim);
 	background-color: $topBarBg;
-	height: 52px;
 	box-shadow: inset 0 3px 3px #000;
 	position: relative;
+	padding-top: 44px;
 
 	&:before {
 		@include absolute(left 0 bottom 0);
@@ -13,6 +15,39 @@
 		content: "";
 		z-index: $z-TopBarAngles;
 	}
+
+	@include breakpoint($bp-tablet) {
+		height: 52px;
+		padding-top: 0;
+	};
+
+	button {
+		@include absolute(top 5px right 5px);
+		@include square(28px);
+		padding: 0;
+		background: none;
+		border: none;
+
+		@include breakpoint($bp-tablet) {
+			display: none;
+		};
+	}
+	.iconic-menu {
+		* {
+			@include iconic-color(white);
+		}
+	}
+}
+
+.header__nav {
+	@extend .container;
+	padding: 0 0 10px;
+	display: none;
+
+	@include breakpoint($bp-tablet) {
+		padding: 0;
+		display: block !important;
+	};
 
 	a {
 		&:link,
@@ -26,6 +61,7 @@
 			letter-spacing: 1.5px;
 			display: block;
 			z-index: $z-MenuLinks;
+			padding: 5px 10px;
 
 			@include breakpoint($bp-tablet) {
 				padding: 14px 10px;
@@ -33,10 +69,11 @@
 			};
 		}
 
-		&:hover,
-		&:focus {
-			color: $navHoverColor;
-			text-decoration: none;
+		&:hover {
+			.no-touch & {
+				color: $navHoverColor;
+				text-decoration: none;
+			}
 		}
 
 		&.active {
@@ -45,16 +82,5 @@
 			&:hover { color: white; }
 		}
 		
-	}
-	
-	button {
-		@include square(28px);
-		padding: 0;
-	}
-	.iconic-menu {
-		* {
-			stroke: white;
-			fill: white;
-		}
 	}
 }
