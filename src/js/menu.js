@@ -3,24 +3,24 @@
  * *******************************************************************************************/
 Caffe.Menu = function () {
 	var init = function () {
-		console.log('Menu loaded');
-
-		$('.nav__toggle').on("click", function () {
+		
+		$('.btn--nav-toggle').on("click", function () {
+			console.log('clicked menu btn');
 			toggleNav();
 		});
 	};
 
+
+	/**
+	 * Shows/Hides the menu on mobile when the btn is clicked
+	 */
 	var toggleNav = function () {
 		var menu = $('.header__nav');
 
 		if ( menu.hasClass('open') ) {
-			menu.slideUp("400", function () {
-				menu.removeClass('open');
-			});
+			Caffe.slideContent(menu, "up");
 		} else {
-			menu.slideDown("400", function () {
-				menu.addClass('open');
-			});
+			Caffe.slideContent(menu, "down");
 		}
 	};
 

@@ -1,12 +1,11 @@
 /*
  * caffenellecucine.com
- * 2.0.0 | 2014-06-13
+ * 2.0.0 | 2014-06-21
  */
 
 $(function () {
 	/**
 	 * Tries to prevent 'console' errors in browsers that lack a console
-	 * @return {[type]} [description]
 	 */
 	var method;
 	var noop = function () {};
@@ -28,23 +27,68 @@ $(function () {
 	Caffe.init();
 });
 
-
+/**********************************************************************************************
+ * Main App
+ * *******************************************************************************************/
 var Caffe = function () {
 	/**
 	 * Init the app
 	 */
 	var init = function () {
-		console.log('Caffe started');
-
 		Caffe.Menu.init();
+
+		$('.btn--view-more').on("click", function () {
+			toggleAboutUs();
+		});
 	};
 
+
+	/**
+	 * Toggles more info in about us section of footer
+	 */
+	var toggleAboutUs = function () {
+		var info = $('.content__block--about-more'),
+			btn  = $('.btn--view-more .text'),
+			icon = $('.iconic-chevron'),
+			iconic = IconicJS();
+
+		if ( info.hasClass('open') ) {
+			slideContent(info, "up");
+			btn.text('View More');
+			icon.attr('data-direction', 'bottom');
+		} else {
+			slideContent(info, "down");
+			btn.text('View Less');
+			icon.attr('data-direction', 'top');
+		}
+
+		iconic.update('.iconic-chevron');
+	};
+
+
+	/**
+	 * Slides content up/down
+	 * @param  {object} $item - jQuery object of item to slide
+	 * @param  {string} dir   - dir to slide: up/down
+	 */
+	var slideContent = function ($item, dir) {
+		if (dir === "up") {
+			$item.slideUp("400", function () {
+				$item.removeClass('open');
+			});
+		} else {
+			$item.slideDown("400", function () {
+				$item.addClass('open');
+			});
+		}
+	};
 
 	/**********************************************************************************************
 	 * AVAILABLE TO GLOBAL SCOPE
 	 * *******************************************************************************************/
 	return {
-		init : init
+		init         : init,
+		slideContent : slideContent
 	};
 
 }();
@@ -53,24 +97,24 @@ var Caffe = function () {
  * *******************************************************************************************/
 Caffe.Menu = function () {
 	var init = function () {
-		console.log('Menu loaded');
-
-		$('.nav__toggle').on("click", function () {
+		
+		$('.btn--nav-toggle').on("click", function () {
+			console.log('clicked menu btn');
 			toggleNav();
 		});
 	};
 
+
+	/**
+	 * Shows/Hides the menu on mobile when the btn is clicked
+	 */
 	var toggleNav = function () {
 		var menu = $('.header__nav');
 
 		if ( menu.hasClass('open') ) {
-			menu.slideUp("400", function () {
-				menu.removeClass('open');
-			});
+			Caffe.slideContent(menu, "up");
 		} else {
-			menu.slideDown("400", function () {
-				menu.addClass('open');
-			});
+			Caffe.slideContent(menu, "down");
 		}
 	};
 

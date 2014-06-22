@@ -5,8 +5,9 @@
 	"browser" : true,
 	"devel"   : true,
 	"globals" : {
-		"jQuery" : true,
-		"$"      : true,
-		"Caffe"    : true
+		"jQuery"   : true,
+		"$"        : true,
+		"Caffe"    : true,
+		"IconicJS" : true
 	}
 }

@@ -1,24 +1,22 @@
 
+/*******************************************************************
+ * PUBLIC MIXINS - use these
+ *******************************************************************/
 
-
-@mixin respond-to($breakpoint) {
-  // Retrieves the value from the key
-  $value: map-get($breakpoints, $breakpoint);
- 
-  // If the key exists in the map
-  @if $value != null {
-    // Prints a media query based on the value
-    @media (min-width: $value) {
-      @content;
-    }
-  }
- 
-  // If the key doesn't exist in the map
-  @else {
-    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-        + "Please make sure it is defined in `$breakpoints` map.";
-  }
+/**
+ * Position Mixins
+ */
+@mixin absolute($args: ()) {
+  @include position(absolute, $args);
 }
+ 
+@mixin fixed($args: ()) {
+  @include position(fixed, $args);
+}
+ 
+@mixin relative($args: ()) {
+  @include position(relative, $args);
+}  
 
 
 /* --------------------------------------------------------------- *
@@ -26,13 +24,13 @@
  * --------------------------------------------------------------- *
  * CodePen: http://codepen.io/HugoGiraudel/pen/xsKdH
  * Article: http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
- * 
+ *
  * $property : the property you want to apply a value to
  * $values   : the values you want to apply to $property
  * ---------------------------------------------------------------
  * .el {
- * 	   @include rem(font-size, 1.5rem);
- * 	   @include rem(padding, 20px 10px);
+ *         @include rem(font-size, 1.5rem);
+ *         @include rem(padding, 20px 10px);
  * }
  * ---------------------------------------------------------------
  * 1. Removing the unit
@@ -40,131 +38,252 @@
 @mixin rem($property, $values) {
   $px : ();
   $rem: ();
-  
+ 
   @each $value in $values {
-   
+  
     @if $value == 0 or $value == auto {
       $px : append($px , $value);
       $rem: append($rem, $value);
     }
-    
-    @else { 
+   
+    @else {
       $unit: unit($value);
       $val: $value / ($value * 0 + 1); /* 1 */
-      
+     
       @if $unit == px {
         $px : append($px,  $value);
         $rem: append($rem, ($val / 10 * 1rem));
       }
-      
+     
       @if $unit == rem {
         $px : append($px,  ($val * 10 * 1px));
         $rem: append($rem, $value);
       }
     }
   }
-  
+ 
   #{$property}: $px;
   #{$property}: $rem;
+} 
+
+/*
+ * Hypenates text
+ */
+@mixin hyphenate(){
+  // -ms-word-break: break-all;
+  //  word-break: break-all;
+
+  // Non standard for webkit
+  word-wrap: break-word;
+
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+          hyphens: auto;
+}
+
+
+/**
+ * Breakpoints
+ * -------
+ * $breakpoints: (
+ *    'tiny':   ( max-width:  767px ),
+ *    'small':  ( min-width:  768px ),
+ *    'medium': ( min-width:  992px ),
+ *    'large':  ( min-width: 1200px ),
+ *    'custom': ( min-height:  40em )
+ * );
+ */
+@mixin breakpoint($name) {
+      @if map-has-key($breakpoints, $name) {
+        @media #{inspect(map-get($breakpoints, $name))} {
+      @content;
+    }
+  }
+  @else {
+    @warn "Couldn't find a breakpoint named `#{$name}`.";
+  }
 }
 
 
 
-/* --------------------------------------------------------------- *
- * A couple of mixins to handle positioning
- * --------------------------------------------------------------- *
- * CodePen: http://codepen.io/HugoGiraudel/pen/HDebE
- * Article: http://hugogiraudel.com/2013/08/05/offsets-sass-mixin/
- * ---------------------------------------------------------------
- * 
- * Private method
- * Can be called but it's not the point
- * ---------------------------------------------------------------
- * $position : position
- * $args     : list of offsets and values
+/**
+ * Prints out specific vendor prefixs 
+ * --------------
  *
+ * .element {
+ *    @include prefix((transform: translate(-50%, -50%)), webkit ms);
+ * }
+ *
+ * .other-element {
+ *    @include prefix((
+ *        column-count: 3,
+ *        column-gap: 1em,
+ *        column-rule: 1px solid silver,
+ *        column-width: 20em
+ *    )), webkit moz);
+ * }
+ * --------------
  */
-@mixin _position($position, $args) {
-
-  @each $o in top right bottom left {
-    $i: index($args, $o);
-    @if $i
-    and $i + 1 <= length($args) 
-    and type-of( nth($args, $i + 1) ) == number {
-      #{$o}: nth($args, $i + 1);
-    }
+@mixin prefix($map, $vendors: webkit moz ms o) {
+  @each $prop, $value in $map {
+        @if $vendors {
+          @each $vendor in $vendors {
+            #{"-" + $vendor + "-" + $prop}: #{$value};
+          }
+        }
+        // Dump regular property anyway
+        #{$prop}: #{$value};
   }
-  
-  position: $position;
 }
 
 /**
- * Mixin triplet calling the private mixin
- * with the appropriate position value
- * ---------------------------------------------------------------
- * $args : list of offsets and values
- *
- * ---------------------------------------------------------------
- * Usage
- *
- * .el {
- *     left   :  will be applied (10px)
- *     right  : won't be applied (not numeric)
- *     top    :  will be applied (1em)
- *     bottom : won't be applied (no value)
- * 	   
- * 	   @include absolute(left 10px right "HAHAHA!" top 1em bottom);
+ * Arrow helper mixin
+ * ---
+ * @param [string] $direction: arrow direction
+ * @param [list] $position: list of offsets and values
+ * @param [color] $color (inherit): arrow color
+ * @param [number] $size (1em): arrow size
+ * ---
  */
-@mixin absolute($args) {
-  @include _position(absolute, $args);
+@mixin triangle($direction, $position, $color: currentColor, $size: 1em) {
+  // Make sure the direction is valid
+  @if not index(top right bottom left, $direction) {
+    @warn "Direction must be one of top, right, bottom or left.";
+  }
+
+  @else {
+    @include absolute($position); // Position
+    @include size(0); // Size
+    content: '';
+    z-index: 2;
+
+    border-#{opposite-position($direction)}: $size * 1.5 solid $color;
+    $perpendicular-borders: $size solid transparent;
+   
+    @if $direction == top or $direction == bottom {
+      border-left:   $perpendicular-borders;
+      border-right:  $perpendicular-borders;
+    }
+
+    @else if $direction == right or $direction == left {
+      border-bottom: $perpendicular-borders;
+      border-top:    $perpendicular-borders;
+    }
+  }
 }
 
-@mixin relative($args) {
-  @include _position(relative, $args);
-}
-
-@mixin fixed($args) {
-  @include _position(fixed,    $args);
-}
-
-
-
-/* --------------------------------------------------------------- *
- * A WebKit scrollbar styling mixin
- * --------------------------------------------------------------- *
- * CodePen: http://codepen.io/HugoGiraudel/pen/KFDuB
- * ---------------------------------------------------------------
- * 
- * Webkit (and IE) scrollbar styling
- * ---------------------------------------------------------------
- * $size      : width for vertical scrollbars, height for horizontal scrollbars
- * $primary   : main color (scrollbar)
- * $secondary : secondary color (background)
- *
- * ---------------------------------------------------------------
- * Usage
- * @include scrollbar(.3em, deepskyblue);
- * 
+/**
+ * Creates an angled corner
  */
-@mixin scrollbar($size, $primary, $secondary: lighten($primary, 25%)) {
-	::-webkit-scrollbar {
-		width:  $size;
-		height: $size;
-	}
+@mixin corner-triangle($corner, $size, $color) {
+     width: 0;
+     height: 0;
 
-	::-webkit-scrollbar-thumb {
-		background: $primary;
-	}
+     @if $corner == 'top-left' {
+          border-top: $size solid $color;
+          border-right: $size solid transparent;
+     } @else if $corner == 'top-right' {
+          border-top: $size solid $color;
+          border-left: $size solid transparent;
+     } @else if $corner == 'bottom-left' {
+          border-right: $size solid transparent;
+          border-bottom: $size solid $color;
+     } @else if $corner == 'bottom-right' {
+          border-bottom: $size solid $color;
+          border-left: $size solid transparent;
+     }
+}
 
-	::-webkit-scrollbar-track {
-		background: $secondary;
-	}
+
+ /*******************************************************************
+ * PRIVATE MIXINS - can, but shouldn’t use these
+ *******************************************************************/
+
+/**
+ * Helper mixin for offset positioning
+ *
+ * About: http://hugogiraudel.com/2013/08/05/offsets-sass-mixin/
+ * Updated: http://hugogiraudel.com/2014/05/19/new-offsets-sass-mixin/
+ * ---
+ * Here is an improved version adding some extra features
+ * ---
+ * @param [string] $position: position
+ * @param [list] $args (()): offsets list
+ * ---
+ */
+
+@mixin position($position, $args: ()) {
+  $offsets: top right bottom left;
+  position: $position;
+ 
+  @each $offset in $offsets {
+    $index: index($args, $offset);
   
-  // For Internet Explorer
-  body {
-    scrollbar-face-color: $primary;
-    scrollbar-track-color: $secondary;
+    @if $index {
+      @if $index == length($args) {
+        #{$offset}: 0;
+      }
+      @else {
+        $next: nth($args, $index + 1);
+        @if is-valid-length($next) {
+          #{$offset}: $next;
+        }
+        @else if index($offsets, $next) {
+          #{$offset}: 0;
+        }
+        @else {
+          @warn "Invalid value `#{$next}` for offset `#{$offset}`.";
+        }
+      }
+    }
   }
 }
 
 
+
+
+ /*******************************************************************
+ * CUSTOM FUNCTIONS:
+ *******************************************************************/
+
+/**
+ * Function checking if $value is a valid length
+ * ---
+ * @param [literal] $value: value to test
+ * ---
+ * @return [bool]
+ */
+
+@function is-valid-length($value) {
+  @return (type-of($value) == "number" and not unitless($value))
+       or (index(auto initial inherit 0, $value) != false);
+}
+
+
+/**
+ * Returns the opposite directions based on values passed in
+ * 
+ */
+@function opposite-direction($directions) {
+      $opposite-directions: ();
+      $direction-map: (
+    'top': 'bottom',
+    'right': 'left',
+    'bottom': 'top',
+    'left': 'right',
+    'ltr': 'rtl',
+    'rtl': 'ltr'
+  );
+ 
+  @each $direction in $directions {
+    $opposite-direction: map-get($direction-map, $direction);
+        @if $opposite-direction != null {
+      $opposite-directions: append($opposite-directions, #{$opposite-direction});
+    }
+    @else {
+      @warn "No opposite direction can be found for `#{$direction}`.";
+    }
+  }
+ 
+  @return $opposite-directions;
+}

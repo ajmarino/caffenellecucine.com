@@ -5,7 +5,7 @@
 	background-color: $topBarBg;
 	box-shadow: inset 0 3px 3px #000;
 	position: relative;
-	padding-top: 44px;
+	padding-top: 50px;
 
 	&:before {
 		@include absolute(left 0 bottom 0);
@@ -16,27 +16,10 @@
 		z-index: $z-TopBarAngles;
 	}
 
-	@include breakpoint($bp-tablet) {
+	@include breakpoint(tablet) {
 		height: 52px;
 		padding-top: 0;
 	};
-
-	button {
-		@include absolute(top 5px right 5px);
-		@include square(28px);
-		padding: 0;
-		background: none;
-		border: none;
-
-		@include breakpoint($bp-tablet) {
-			display: none;
-		};
-	}
-	.iconic-menu {
-		* {
-			@include iconic-color(white);
-		}
-	}
 }
 
 .header__nav {
@@ -44,7 +27,7 @@
 	padding: 0 0 10px;
 	display: none;
 
-	@include breakpoint($bp-tablet) {
+	@include breakpoint(tablet) {
 		padding: 0;
 		display: block !important;
 	};
@@ -63,7 +46,7 @@
 			z-index: $z-MenuLinks;
 			padding: 5px 10px;
 
-			@include breakpoint($bp-tablet) {
+			@include breakpoint(tablet) {
 				padding: 14px 10px;
 				display: inline-block;
 			};

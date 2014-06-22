@@ -2,7 +2,7 @@
  * Main Footer
  */
 footer {
-	margin: 30px 0;
+	@extend .container;
 	border-bottom: $dottedBd;
 	padding: 10px 0;
 	
@@ -13,42 +13,18 @@ footer {
 		margin-bottom: 10px;
 	}
 	
-	.btn--view-more {
-		@include transition($anim);
-		@include typecsset-font-size(10px);
-		color: $navHoverColor;
-		text-transform: uppercase;
-		letter-spacing: 1.5px;
-		margin-bottom: 15px;
-		border-radius: 5px;
-		background-color: rgba($mainColor, .1);
-		border: none;
-		
-		&:hover,
-		&:focus {
-			background-color: rgba($mainColor, .3);
-			color: darken($navHoverColor, 10%);
-
-			.iconic-chevron * {
-				@include iconic-color(darken($navHoverColor, 10%));
-			}
-		}
-	
-		span {
-			@include square(16px);
-			display: inline-block;
-		}
-	
-		.iconic-chevron * {
-			@include iconic-color($navHoverColor);
-			@include transition($anim);
-		}
-	}
-
 	.content__block {
-		padding: 0 15px;
+		padding: 0;
 		margin-bottom: 15px;
+	
+		&--about-more {
+			display: none;
+			
+			&.open { display: block; }
+		}
 	}
+
+	
 
 	.testimonials {
 		blockquote,
