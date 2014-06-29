@@ -1,10 +1,8 @@
 /**
  *  Mailchimp Signup form
  */
-#mc_embed_signup { padding-top: 15px; margin-bottom: 30px;
-	// @media @tablet { margin-bottom: 0; }
-	
-	label { 
+.mc {
+	.mc__label { 
 		@extend h3;
 	}
 }

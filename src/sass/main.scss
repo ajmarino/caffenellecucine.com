@@ -9,10 +9,10 @@
 @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/scaffolding";
 // @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/buttons";
 @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/carousel";
-@import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/grid";
-@import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/forms";
-@import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/navs";
-@import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/navbar";
+// @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/grid";
+// @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/forms";
+// @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/navs";
+// @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/navbar";
 
 
 @import "general/fonts";
@@ -29,7 +29,7 @@
 
 @import "layout/base";
 @import "layout/header";
-@import "layout/nav";
+@import "layout/navs";
 @import "layout/footer";
 
 

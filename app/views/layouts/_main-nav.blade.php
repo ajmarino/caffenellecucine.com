@@ -1,12 +1,12 @@
 <nav class="header__nav" role="navigation">
-	<a href="/" class="{{ Request::path() == '/' ? 'active' : '' }}">Home</a>
-	<a href="/breakfast" class="{{ Request::path() == 'breakfast' ? 'active' : '' }}">Breakfast</a>
-	<a href="/lunch" class="{{ Request::path() == 'lunch' ? 'active' : '' }}">Lunch</a>
-	<a href="/dinner" class="{{ Request::path() == 'dinner' ? 'active' : '' }}">Dinner</a>
-	<a href="/coffee" class="{{ Request::path() == 'coffee' ? 'active' : '' }}">Coffee Bar</a>
-	<a href="/bakery" class="{{ Request::path() == 'bakery' ? 'active' : '' }}">Bakery</a>
-	<a href="/catering" class="{{ Request::path() == 'catering' ? 'active' : '' }}">Catering</a>
-	<a href="/contact" class="{{ Request::path() == 'contact' ? 'active' : '' }}">Contact</a>
+	<a href="/" class="nav__link {{ Request::path() == '/' ? 'nav__link--active' : '' }}">Home</a>
+	<a href="/coffee" class="nav__link {{ Request::path() == 'coffee' ? 'nav__link--active' : '' }}">Coffee Bar</a>
+	<a href="/breakfast" class="nav__link {{ Request::path() == 'breakfast' ? 'nav__link--active' : '' }}">Breakfast</a>
+	<a href="/lunch" class="nav__link {{ Request::path() == 'lunch' ? 'nav__link--active' : '' }}">Lunch</a>
+	<a href="/dinner" class="nav__link {{ Request::path() == 'dinner' ? 'nav__link--active' : '' }}">Dinner</a>
+	<a href="/bakery" class="nav__link {{ Request::path() == 'bakery' ? 'nav__link--active' : '' }}">Bakery</a>
+	<a href="/catering" class="nav__link {{ Request::path() == 'catering' ? 'nav__link--active' : '' }}">Catering</a>
+	<a href="/contact" class="nav__link {{ Request::path() == 'contact' ? 'nav__link--active' : '' }}">Contact</a>
 	
 	<!-- 
 	@ if (Sentry::check())

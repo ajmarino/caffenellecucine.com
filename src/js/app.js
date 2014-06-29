@@ -50,14 +50,14 @@ var Caffe = function () {
 		if ( info.hasClass('open') ) {
 			slideContent(info, "up");
 			btn.text('View More');
-			icon.attr('data-direction', 'bottom');
+			icon.setDirection('bottom');
 		} else {
 			slideContent(info, "down");
 			btn.text('View Less');
-			icon.attr('data-direction', 'top');
+			icon.setDirection('top');
 		}
 
-		iconic.update('.iconic-chevron');
+		// iconic.update('.iconic-chevron');
 	};
 
 

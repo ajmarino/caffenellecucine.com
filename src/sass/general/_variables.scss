@@ -1,12 +1,15 @@
-
+/**
+ * Colors
+ */
 $teal : #13d4d3;
 
 
-$topBarBg : #251505;
+$bg-TopBar : #251505;
 
-$baseTextColor : #474747;
+$color-BaseText : #474747;
+$color-Headline : #343434;
 
-$navHoverColor : $teal;
+$color-NavHover : $teal;
 
 
 
@@ -14,29 +17,33 @@ $navHoverColor : $teal;
 $mainColor     : #f4e6cc;
 $accentColor   : #8a8571;
 $tertairyColor : #b3b496;
-$headlineColor : #a2ccd0;
+
 $btnColor      : #dedba7;
 
 
 $dottedBd : 1px dotted $accentColor;
 
 
-
-$serifFont : Georgia, Palatino, serif;
-$sansFont  : 'Oswald', Helvetica, sans-serif;
-
-
+/**
+ * Misc
+ */
 $anim: all 0.3s linear;
+
+
+
 
 /**
  * Font Settings
  */
 $typecsset-show-baseline    : true;
-$typecsset-base-font-size   : 16px;
-$typecsset-base-line-height : 24px;
+
+$serifFont : Georgia, Palatino, serif;
+$sansFont  : 'Oswald', Helvetica, sans-serif;
 
 
-
+/**
+ * Breakpoints
+ */
 $bp-tablet  : 48em;  // 767px
 $bp-labtop  : 62em;  // 992px
 $bp-desktop : 75em;  // 1200px
@@ -46,8 +53,6 @@ $breakpoints: (
   "labtop"  : (min-width: $bp-labtop),
   "desktop" : (min-width: $bp-desktop)
 );
-
-
 
 
 

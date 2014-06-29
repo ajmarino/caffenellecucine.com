@@ -3,8 +3,28 @@
  */
 body {
 	background: url(/images/bg.jpg) repeat center top;
+	// background: none;
 	font-family: $serifFont;
-	color: $baseTextColor;
+	color: $color-BaseText;
+}
+
+.container {
+	@include transition($anim);
+	
+
+	@include breakpoint(tablet) {
+		width: $bp-tablet + 6;
+		margin: 0 auto;
+		padding: 0 1em;
+	};
+
+	@include breakpoint(labtop) {
+		width: $bp-labtop + 8;	
+	};
+
+	@include breakpoint(desktop) {
+		width: $bp-desktop + 10;
+	};
 }
 
 main {

@@ -3,46 +3,71 @@
  */
 footer {
 	@extend .container;
+	@include clearfix;
 	border-bottom: $dottedBd;
-	padding: 10px 0;
 	
 	p {
 		@include typecsset-font-size(14px);
 		font-family: $serifFont;
-		line-height: 15px;
-		margin-bottom: 10px;
 	}
-	
+
 	.content__block {
-		padding: 0;
+		padding: 0 15px;
 		margin-bottom: 15px;
+
+		@include breakpoint(tablet) {
+			float: left;
+
+			&:first-of-type { padding-left: 0; }
+			&:last-of-type { padding-right: 0; }
+		};
 	
+		&--about-us, &--testimonials {
+			@include breakpoint(tablet) {
+				width: 50%;
+			};
+		}
+
 		&--about-more {
 			display: none;
 			
 			&.open { display: block; }
 		}
-	}
 
+		&--testimonials {
+			
+
+		}
+
+		&--hours {
+			@include breakpoint(tablet) {
+				width: 20%;
+			};
+		}
+
+		&--menu, &--email {
+			@include breakpoint(tablet) {
+				width: 40%;
+			};
+		}
+
+		&--legal {
+			@include breakpoint(tablet) {
+				padding-left: 0;
+			};
+		}
+	}	
 	
 
-	.testimonials {
-		blockquote,
-		p {
-			@include typecsset-font-size(12px);
-			color: #f4e6cc;
-			line-height: 15px;
-			margin-bottom: 5px;
-		}
+	.footer__row, .content__block--legal {
+		@include clearfix;
+		padding-top: 25px;
+		width: 100%;
+		background: url(/images/angled-lines.png) repeat-x top left transparent;
+	}
 
-		blockquote {
-			@include typecsset-font-size(13px);
-			padding-left: 15px;
-			border-left: 1px dotted #8A8571;
-		}
-		p {
-			font-style: italic;
-			text-align: right;
-		}
+
+	.footer__title {
+
 	}
 }

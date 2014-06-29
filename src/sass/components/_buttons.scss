@@ -22,20 +22,19 @@
 			outline: none;
 
 			.iconic-menu * {
-				@include iconic-color($navHoverColor);
+				@include iconic-color($color-NavHover);
 			}
 		}
 
-		.iconic-menu {
-			* {
-				@include iconic-color(white);
-			}
+		.iconic-menu * {
+			@include iconic-color(white);
+			stroke-linecap: round;
 		}
 	}
 
 	&--view-more {
 		@include typecsset-font-size(10px);
-		color: $navHoverColor;
+		color: $color-NavHover;
 		text-transform: uppercase;
 		
 		margin-bottom: 15px;
@@ -48,10 +47,10 @@
 
 			.no-touch & {
 				background-color: rgba($mainColor, .3);
-				color: darken($navHoverColor, 10%);
+				color: darken($color-NavHover, 10%);
 
 				.iconic-chevron * {
-					@include iconic-color(darken($navHoverColor, 10%));
+					@include iconic-color(darken($color-NavHover, 10%));
 				}
 			}
 		}
@@ -63,7 +62,7 @@
 		}
 
 		.iconic-chevron * {
-			@include iconic-color($navHoverColor);
+			@include iconic-color($color-NavHover);
 			@include transition($anim);
 		}
 	}

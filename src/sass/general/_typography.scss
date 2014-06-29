@@ -2,11 +2,41 @@
  * General Typography
  */
 
-h1, h2, h3, h4, h5 { font-family: $sansFont; }
-
-h1 { font-weight: normal; color: $headlineColor; text-decoration: none; margin: 0 0 10px;
-	@include typecsset-font-size(36px);
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: $sansFont;
+	font-weight: normal;
+	color: $color-Headline;
 }
-h3, .h3 { color: $tertairyColor; text-transform: uppercase; letter-spacing: 1.5px; margin: 10px 0 5px; font-weight: normal;
-	@include typecsset-font-size(24px);
+
+
+blockquote {
+	position: relative;
+	quotes: none;
+	
+	i {
+		@include absolute(top 0 left -50px);
+		@include size(2.5em, 2em);
+		display: block;
+
+		.iconic {
+			@include relative(left 5px);
+		}
+
+		.iconic-double-quote-serif * {
+			@include iconic-color($color-BaseText);
+		}
+	}
+
+	p {
+		@include typecsset-font-size(14px);
+		font-style: italic;
+	}
+
+	cite {
+		text-align: right;
+	}
 }

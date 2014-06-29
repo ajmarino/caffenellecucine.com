@@ -1,5 +1,6 @@
-.carousel { padding: 0;
-	@extend .col-sm-6;
+.carousel {
+	padding: 0;
+	
 
 	.carousel-indicators {
 		li { @include transition($anim); }
