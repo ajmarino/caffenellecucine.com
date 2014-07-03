@@ -1,15 +1,26 @@
 /**
  * Colors
  */
-$teal : #13d4d3;
+$teal     : #13d4d3;
+$darkTeal : #6b8d91;
 
 
 $bg-TopBar : #251505;
 
-$color-BaseText : #474747;
-$color-Headline : #343434;
+$c-BaseText : #474747;
+$c-Headline : #343434;
 
-$color-NavHover : $teal;
+$c-NavHover : $darkTeal;
+
+$c-FooterTitle : #6f6f6f;
+$c-FooterLink  : #7e7e7e;
+
+
+$c-InputBg          : rgba(black, .02);
+$c-InputBgFocus     : rgba(black, .08);
+$c-InputBorder      : rgba(black, .13);
+$c-InputBorderFocus : rgba(black, .3);
+
 
 
 
@@ -22,6 +33,8 @@ $btnColor      : #dedba7;
 
 
 $dottedBd : 1px dotted $accentColor;
+
+
 
 
 /**
@@ -38,7 +51,7 @@ $anim: all 0.3s linear;
 $typecsset-show-baseline    : true;
 
 $serifFont : Georgia, Palatino, serif;
-$sansFont  : 'Oswald', Helvetica, sans-serif;
+$sansFont  : "Oswald", Helvetica, sans-serif;
 
 
 /**
@@ -49,9 +62,9 @@ $bp-labtop  : 62em;  // 992px
 $bp-desktop : 75em;  // 1200px
 
 $breakpoints: (
-  "tablet"  : (min-width: $bp-tablet),
-  "labtop"  : (min-width: $bp-labtop),
-  "desktop" : (min-width: $bp-desktop)
+	"tablet"  : (min-width: $bp-tablet),
+	"labtop"  : (min-width: $bp-labtop),
+	"desktop" : (min-width: $bp-desktop)
 );
 
 
@@ -59,7 +72,9 @@ $breakpoints: (
 /**
  * Z - Index
  */
-$z-MenuLinks    : 5;
-$z-TopBarAngles : 10;
+$z-layers: (
+	"menu-links"    : 5,
+	"topbar-angles" : 10
+);
 
 

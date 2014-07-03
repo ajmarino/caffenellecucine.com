@@ -28,9 +28,9 @@
 	<div class="footer__row">
 		<div class="content__block content__block--hours">
 			<h3 class="footer__title">Hours</h3>
-			<p>Monday - Friday: 7am - 8pm</p>
-			<p>Saturday: 8am - 8pm</p>
-			<p>Sunday: 9am - 4pm</p>
+			<p>M - F: 7 - 8</p>
+			<p>Sat: 8 - 8</p>
+			<p>Sun: 9 - 4</p>
 		</div>
 
 		
@@ -39,7 +39,6 @@
 
 			<nav class="footer__nav">
 				<a href="/coffee" class="nav__link">Coffee Bar</a>
-				<a href="/bakery" class="nav__link">Bakery</a>
 				<a href="/catering" class="nav__link">Catering</a>
 				<a href="/contact" class="nav__link">Contact</a>
 			</nav>
@@ -55,8 +54,8 @@
 		<div id="mc_embed_signup" class="mc content__block content__block--email">
 			<form action="http://caffenellecucine.us6.list-manage.com/subscribe/post?u=20311fe0d4de3455f8d70922d&amp;id=20c947202a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate mc__form" target="_blank" novalidate role="form">
 				<div class="form-group">
-					<label for="mce-EMAIL" class="mc__label">» Subscribe to our mailing list</label>
-					<input type="email" value="" name="EMAIL" class="mc__input form-control" id="mce-EMAIL" placeholder="email address" required>
+					<label for="mce-EMAIL" class="mc__label">Subscribe to our mailing list</label>
+					<input type="email" value="" name="EMAIL" class="mc__input" id="mce-EMAIL" placeholder="email address" required>
 				</div>
 				
 				<button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn btn--email-signup">

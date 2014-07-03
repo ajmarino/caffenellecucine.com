@@ -1,14 +1,29 @@
-.form-control { background: #f0e4c5; color: #5b5a4e; font-family: $sansFont; border: none; border-radius: 5px; padding: 6px 10px; width: 100%;
-	border: 1px solid $mainColor; margin-bottom: 10px;
-	@include transition($anim);
-	@include typecsset-font-size(11px);
+form {
 
-	&:focus { background: #fcf3dd; outline: none; box-shadow: 0 0 5px $btnColor; border: 1px solid $tertairyColor; }
-}
-	
+	input {
+		&[type="text"],
+		&[type="email"] {
+			@include transition($anim);
+			@include typecsset-font-size(11px);
+			background: $c-InputBg;
+			color: $c-Headline;
+			border-radius: 5px;
+			padding: 6px 10px;
+			width: 100%;
+			border: 1px solid $c-InputBorder;
+			margin-bottom: 10px;
+		
+			&:focus {
+				background: $c-InputBgFocus;
+				outline: none;
+				box-shadow: 0 0 5px $c-InputBorderFocus;
+				border-color: $c-InputBorderFocus;
+			}
 
-
-
-.control-label { color: $tertairyColor; text-transform: uppercase; letter-spacing: 1.5px; font-weight: normal;
-	@include typecsset-font-size(10px);
+			&::placeholder,
+			&::-webkit-input-placeholder {
+				color: $c-FooterTitle;
+			}
+		}
+	}
 }

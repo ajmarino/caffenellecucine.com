@@ -22,7 +22,7 @@
 			outline: none;
 
 			.iconic-menu * {
-				@include iconic-color($color-NavHover);
+				@include iconic-color($c-NavHover);
 			}
 		}
 
@@ -34,7 +34,7 @@
 
 	&--view-more {
 		@include typecsset-font-size(10px);
-		color: $color-NavHover;
+		color: $c-NavHover;
 		text-transform: uppercase;
 		
 		margin-bottom: 15px;
@@ -47,10 +47,10 @@
 
 			.no-touch & {
 				background-color: rgba($mainColor, .3);
-				color: darken($color-NavHover, 10%);
+				color: darken($c-NavHover, 10%);
 
 				.iconic-chevron * {
-					@include iconic-color(darken($color-NavHover, 10%));
+					@include iconic-color(darken($c-NavHover, 10%));
 				}
 			}
 		}
@@ -62,7 +62,7 @@
 		}
 
 		.iconic-chevron * {
-			@include iconic-color($color-NavHover);
+			@include iconic-color($c-NavHover);
 			@include transition($anim);
 		}
 	}

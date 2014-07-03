@@ -12,17 +12,18 @@ footer {
 	}
 
 	.content__block {
-		padding: 0 15px;
+		padding: 0 10px;
 		margin-bottom: 15px;
+		float: left;
 
 		@include breakpoint(tablet) {
-			float: left;
 
 			&:first-of-type { padding-left: 0; }
 			&:last-of-type { padding-right: 0; }
 		};
 	
-		&--about-us, &--testimonials {
+		&--about-us,
+		&--testimonials {
 			@include breakpoint(tablet) {
 				width: 50%;
 			};
@@ -40,18 +41,35 @@ footer {
 		}
 
 		&--hours {
+			width: 50%;
+
 			@include breakpoint(tablet) {
 				width: 20%;
 			};
 		}
+		
+		&--menu {
+			width: 50%;
+		}
+		
+		&--email {
+			width: 100%;
+		}
 
-		&--menu, &--email {
+		&--hours,
+		&--menu {
+		}
+
+		&--menu,
+		&--email {
 			@include breakpoint(tablet) {
 				width: 40%;
 			};
 		}
 
 		&--legal {
+			background: url(/images/angled-lines.png) repeat-x top left transparent;
+
 			@include breakpoint(tablet) {
 				padding-left: 0;
 			};
@@ -63,11 +81,14 @@ footer {
 		@include clearfix;
 		padding-top: 25px;
 		width: 100%;
-		background: url(/images/angled-lines.png) repeat-x top left transparent;
 	}
 
 
 	.footer__title {
-
+		@include typecsset-font-size(14px);
+		color: $c-FooterTitle;
+		padding-bottom: 10px;
+		border-bottom: 1px solid rgba(black, .08);
 	}
 }
+

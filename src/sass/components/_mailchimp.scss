@@ -2,7 +2,9 @@
  *  Mailchimp Signup form
  */
 .mc {
-	.mc__label { 
+	.mc__label {
 		@extend h3;
+		@extend .footer__title;
+		display: block;
 	}
 }

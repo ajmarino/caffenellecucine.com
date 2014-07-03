@@ -13,7 +13,7 @@
 		background: url(/images/top-bar-bg.png) repeat-x center top transparent;
 		display: block;
 		content: "";
-		z-index: $z-TopBarAngles;
+		z-index: z("topbar-angles");
 	}
 
 	@include breakpoint(tablet) {
@@ -42,7 +42,7 @@
 			text-transform: uppercase;
 			letter-spacing: 1.5px;
 			display: block;
-			z-index: $z-MenuLinks;
+			z-index: z("menu-links");
 			padding: 10px;
 
 			@include breakpoint(tablet) {
@@ -53,7 +53,7 @@
 
 		&:hover {
 			.no-touch & {
-				color: $color-NavHover;
+				color: $c-NavHover;
 				text-decoration: none;
 			}
 		}
@@ -61,12 +61,12 @@
 		&:active {
 			.touch & {
 				text-decoration: none;
-				color: $color-NavHover;
+				color: $c-NavHover;
 			}
 		}
 
 		&--active {
-			background: $color-NavHover;
+			background: $c-NavHover;
 			text-decoration: none;
 
 			&:hover {
@@ -81,9 +81,25 @@
 
 .footer__nav {
 	float: left;
-	width: 50%;
+	
+	width: 100%;
+
+	@include breakpoint(tablet) {
+		width: 50%;
+	}
 
 	.nav__link {
-		display: block;
+
+		&:link,
+		&:visited {
+			@include transition($anim);
+			display: block;
+			color: $c-FooterLink;
+		}
+		
+		&:hover {
+			color: $c-Headline;
+			text-decoration: none;
+		}
 	}
 }

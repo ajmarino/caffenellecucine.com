@@ -9,7 +9,7 @@ h4,
 h5 {
 	font-family: $sansFont;
 	font-weight: normal;
-	color: $color-Headline;
+	color: $c-Headline;
 }
 
 
@@ -18,7 +18,7 @@ blockquote {
 	quotes: none;
 	
 	i {
-		@include absolute(top 0 left -50px);
+		@include absolute(top 0 left -40px);
 		@include size(2.5em, 2em);
 		display: block;
 
@@ -27,7 +27,7 @@ blockquote {
 		}
 
 		.iconic-double-quote-serif * {
-			@include iconic-color($color-BaseText);
+			@include iconic-color($c-BaseText);
 		}
 	}
 
